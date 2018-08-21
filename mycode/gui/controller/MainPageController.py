@@ -15,7 +15,7 @@ class MainPageController:
         self.mainPageModel.abricht_p2.setX(self.mainPage.abricht_p2x.get())
         self.mainPageModel.abricht_p2.setY(self.mainPage.abricht_p2y.get())
 
-        self.mainPage.result.set(self.mainPageModel.calcAbrichtScheibeWidth())
+        self.mainPage.distance.set("distance: " + str(self.mainPageModel.calcAbrichtScheibeWidth()))
 
 
 def main():
