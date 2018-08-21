@@ -6,15 +6,15 @@ from mycode.util.CalcUtil import *
 def test1():
     p1 = MyPoint(1, 0)
     p2 = MyPoint(2, 4)
-    print(p1.getSpace(p2))
-    print(N(p1.getSpace(p2)))
+    print(p1.calcSpace(p2))
+    print(N(p1.calcSpace(p2)))
 
 def test2():
     x1,x2,y1,y2 = symbols('x1,x2,y1,y2')
     p1 = MyPoint(x1,y1)
     p2 = MyPoint(x2,y2)
-    print(p1.getSpace(p2))
-    print(N(p1.getSpace(p2)))
+    print(p1.calcSpace(p2))
+    print(N(p1.calcSpace(p2)))
 
 def test3():
     x1, x2, y1, y2 = symbols('x1,x2,y1,y2')

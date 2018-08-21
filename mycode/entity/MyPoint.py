@@ -30,5 +30,5 @@ class MyPoint:
     def toMatrix(self):
         return Matrix([self.__x, self.__y, 1])
 
-    def getSpace(self, other):
+    def calcSpace(self, other):
         return sqrt((self.__x - other.getX()) ** 2 + (self.__y - other.getY()) ** 2)
