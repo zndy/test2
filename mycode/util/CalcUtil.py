@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from mycode.entity.MyPoint import *
-from math import *
+from sympy import *
 
 
 class CalcUtil:

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from sympy import *
-from math import *
+
 
 class MyPoint:
 
@@ -13,7 +13,7 @@ class MyPoint:
         self.__y = y
 
     def __str__(self):
-        return "Point (%d, %d)" % (self.__x, self.__y)
+        return "(" + str(self.__x) + ", " + str(self.__y) + ")"
 
     def getX(self):
         return self.__x
@@ -31,4 +31,4 @@ class MyPoint:
         return Matrix([self.__x, self.__y, 1])
 
     def getSpace(self, other):
-        return sqrt(pow(self.__x - other.getX(), 2) + pow(self.__y - other.getY(), 2))
+        return sqrt((self.__x - other.getX()) ** 2 + (self.__y - other.getY()) ** 2)
