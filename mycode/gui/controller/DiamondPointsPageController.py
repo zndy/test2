@@ -23,3 +23,4 @@ class DiamondPointsPageController:
         self.diamondPointsPage.diamond_c1y.set(self.diamondPointsPageModel.diamondPointC1.getY())
         self.diamondPointsPage.diamond_c2x.set(self.diamondPointsPageModel.diamondPointC2.getX())
         self.diamondPointsPage.diamond_c2y.set(self.diamondPointsPageModel.diamondPointC2.getY())
+
