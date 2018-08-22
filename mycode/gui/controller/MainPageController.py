@@ -6,16 +6,17 @@ from mycode.util.WindowUtil import *
 
 
 class MainPageController:
-    def __init__(self):
+    def __init__(self, root):
+        self.root = root
         self.mainPageModel = MainPageModel()
-        self.mainPage = MainPage()
+        self.mainPage = MainPage(self.root)
         self.mainPage.addCalcBtnListener(self.calcBtnPressed)
 
     def calcBtnPressed(self, event):
         self.saveViewDataToModel()
         self.updateViewDistance()
         self.updateViewPoints()
-        self.openFrame()
+        self.openDiamondPage()
 
     def saveViewDataToModel(self):
         self.mainPageModel.abricht_p1.setX(self.mainPage.abricht_p1x.get())
@@ -54,15 +55,18 @@ class MainPageController:
         self.mainPage.diamond_c2x.set(diamondPointC2.getX())
         self.mainPage.diamond_c2y.set(diamondPointC2.getY())
 
-    def openFrame(self):
-        window = WindowUtil.createFrameCenter(false, "Diamond Points", 300, 200)
-        DiamondPointsPage()
+    def openDiamondPage(self):
+        window = Toplevel(self.root)
+        WindowUtil.setWindowAttributes("Diamond Points Page", 300, 200, window)
+        DiamondPointsPage(window)
         window.mainloop()
 
+
 def main():
-    window = WindowUtil.createFrameCenter(true, "Abrichten", 800, 650)
-    MainPageController()
-    window.mainloop()
+    root = Tk()
+    WindowUtil.setWindowAttributes("Abrichten Page", 800, 650, root)
+    MainPageController(root)
+    root.mainloop()
 
 
 if __name__ == '__main__':

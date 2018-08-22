@@ -5,12 +5,7 @@ from tkinter import *
 class WindowUtil:
 
     @staticmethod
-    def createFrameCenter(root, title, w, h):
-        if root:
-            window = Tk()  # create a Tk root window
-        else:
-            window = Toplevel()
-
+    def setWindowAttributes(title, w, h, window=Misc):
         window.title(title)
 
         # get screen width and height

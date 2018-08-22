@@ -3,7 +3,9 @@ from tkinter import *
 
 
 class DiamondPointsPage(Frame):
-    def __init__(self):
+    def __init__(self, window):
+        self.window = window
+
         # diamond points value
         self.diamond_a1x = IntVar()
         self.diamond_a1y = IntVar()
@@ -19,7 +21,7 @@ class DiamondPointsPage(Frame):
         self.diamond_c2y = IntVar()
 
         self.row = 0
-        self.diamondPointFrame = Frame("")
+        self.diamondPointFrame = Frame(self.window)
         self.diamondPointFrame.grid(row=self.row, column=0)
         self.__createDiamondPointFrame()
 
