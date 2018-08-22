@@ -2,19 +2,23 @@
 from mycode.gui.model.MainPageModel import *
 from mycode.gui.view.MainPage import *
 from mycode.gui.view.DiamondPointsPage import *
+from mycode.gui.model.DiamondPointsPageModel import *
 from mycode.util.WindowUtil import *
+from mycode.gui.BeanFactory import *
 
 
 class MainPageController:
     def __init__(self, root):
         self.root = root
-        self.mainPageModel = MainPageModel()
+        self.mainPageModel = beanFactory.mainPageModel
         self.mainPage = MainPage(self.root)
         self.mainPage.addCalcBtnListener(self.calcBtnPressed)
 
+        self.diamondPointsPageModel = beanFactory.diamondPointsPageModel
+
     def calcBtnPressed(self, event):
         self.saveViewDataToModel()
-        self.updateViewDistance()
+        self.updateDiamondPointsPageModel()
         self.updateViewPoints()
         self.openDiamondPage()
 
@@ -31,6 +35,9 @@ class MainPageController:
         self.mainPageModel.diamond_p3.setY(self.mainPage.diamond_p3y.get())
         self.mainPageModel.diamond_p4.setX(self.mainPage.diamond_p4x.get())
         self.mainPageModel.diamond_p4.setY(self.mainPage.diamond_p4y.get())
+
+    def updateDiamondPointsPageModel(self):
+        pass
 
     def updateViewDistance(self):
         self.mainPage.distance.set(self.mainPageModel.calcAbrichtScheibeWidth())
