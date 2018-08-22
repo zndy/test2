@@ -60,14 +60,3 @@ class MainPageController:
         WindowUtil.setWindowAttributes("Diamond Points Page", 300, 200, window)
         DiamondPointsPage(window)
         window.mainloop()
-
-
-def main():
-    root = Tk()
-    WindowUtil.setWindowAttributes("Abrichten Page", 800, 650, root)
-    MainPageController(root)
-    root.mainloop()
-
-
-if __name__ == '__main__':
-    main()
