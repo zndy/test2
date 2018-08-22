@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 from tkinter import *
+from mycode.gui.BeanFactory import *
 
 
 class MainPage(Frame):
-    def __init__(self, window):
-        self.window = window
+    def __init__(self):
+        self.window = beanFactory.root
+
         # abricht scheibe value
         self.abricht_p1x = IntVar()
         self.abricht_p1y = IntVar()
