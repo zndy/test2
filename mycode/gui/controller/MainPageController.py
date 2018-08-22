@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from mycode.gui.model.MainPageModel import *
 from mycode.gui.view.MainPage import *
+from mycode.gui.view.DiamondPointsPage import *
 
 
 class MainPageController:
@@ -13,6 +14,7 @@ class MainPageController:
         self.saveViewDataToModel()
         self.updateViewDistance()
         self.updateViewPoints()
+        self.openFrame()
 
     def saveViewDataToModel(self):
         self.mainPageModel.abricht_p1.setX(self.mainPage.abricht_p1x.get())
@@ -50,6 +52,12 @@ class MainPageController:
         diamondPointC2 = self.mainPageModel.calcDiamondPointC2()
         self.mainPage.diamond_c2x.set(diamondPointC2.getX())
         self.mainPage.diamond_c2y.set(diamondPointC2.getY())
+
+    def openFrame(self):
+        frame = Toplevel()
+        frame.geometry("400x300")
+        frame.title("Diamond Points")
+        DiamondPointsPage()
 
 
 def main():
