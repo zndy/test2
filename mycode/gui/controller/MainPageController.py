@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from mycode.gui.view.MainPage import *
-from mycode.gui.view.DiamondPointsPage import *
+from mycode.gui.controller.DiamondPointsPageController import *
 from mycode.util.WindowUtil import *
 from mycode.gui.BeanFactory import *
 
@@ -12,7 +12,6 @@ class MainPageController:
         self.mainPage.addCalcBtnListener(self.calcBtnPressed)
 
         self.diamondPointsPageModel = beanFactory.diamondPointsPageModel
-        # self.diamondPointsPageController
 
     def calcBtnPressed(self, event):
         self.saveViewDataToModel()
@@ -69,5 +68,5 @@ class MainPageController:
 
     def openDiamondPage(self):
         window = Toplevel(beanFactory.root)
-        WindowUtil.setWindowAttributes("Diamond Points Page", 300, 200, window)
-        DiamondPointsPage(window)
+        WindowUtil.setWindowAttributes("Diamond Points Page", 600, 400, window)
+        DiamondPointsPageController(window).updateView()
