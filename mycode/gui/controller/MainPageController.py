@@ -2,6 +2,7 @@
 from mycode.gui.model.MainPageModel import *
 from mycode.gui.view.MainPage import *
 from mycode.gui.view.DiamondPointsPage import *
+from mycode.util.WindowUtil import *
 
 
 class MainPageController:
@@ -54,29 +55,12 @@ class MainPageController:
         self.mainPage.diamond_c2y.set(diamondPointC2.getY())
 
     def openFrame(self):
-        frame = Toplevel()
-        frame.geometry("400x300")
-        frame.title("Diamond Points")
+        window = WindowUtil.createFrameCenter(false, "Diamond Points", 300, 200)
         DiamondPointsPage()
-
+        window.mainloop()
 
 def main():
-    window = Tk()  # create a Tk root window
-    window.title('Abrichten')
-    w = 800  # width for the Tk root
-    h = 650  # height for the Tk root
-
-    # get screen width and height
-    ws = window.winfo_screenwidth()  # width of the screen
-    hs = window.winfo_screenheight()  # height of the screen
-
-    # calculate x and y coordinates for the Tk root window
-    x = (ws / 2) - (w / 2)
-    y = (hs / 2) - (h / 2)
-
-    # set the dimensions of the screen
-    # and where it is placed
-    window.geometry('%dx%d+%d+%d' % (w, h, x, y))
+    window = WindowUtil.createFrameCenter(true, "Abrichten", 800, 650)
     MainPageController()
     window.mainloop()
 
