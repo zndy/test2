@@ -16,7 +16,9 @@ class MainPageModel:
         return CalcUtil.calcDistanceBetween(self.abricht_p1, self.abricht_p2)
 
     def calcAbrichtAngle(self):
-        return 45
+        line1 = Line(self.diamond_p1.toSympyPoint(), self.diamond_p2.toSympyPoint())
+        line2 = Line(self.diamond_p2.toSympyPoint(), self.diamond_p3.toSympyPoint())
+        return N(deg(line1.angle_between(line2)))
 
     def calcDiamondPointA1(self):
         return CalcUtil.calcAbrichtPoint(self.diamond_p1, self.diamond_p2, self.calcAbrichtScheibeWidth())
