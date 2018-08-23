@@ -88,18 +88,20 @@ class MainPage(Frame):
         DrawUtil.drawCicle(p2x, p2y, radius, canvas)
         canvas.create_text(p2x, p2y - 10, fill="darkblue", font="Times 10 italic bold", text="p2")
 
-        DrawUtil.drawAxis(60, 80, 50, "red", 0, canvas)
+        axisX = p1x + (p2x - p1x) / 2
+        axisY = p1y
+        DrawUtil.drawAxis(axisX, axisY, 50, "red", 0, canvas)
 
     def __drawDiamondScheibe(self):
         canvas = Canvas(self.canvasFrame, width=200, height=200)
         canvas.grid(row=0, column=1, columnspan=1)
-        p1x = p4x = 60
+        p1x = p4x = 100
         p1y = p6y = 120
-        p2x = p3x = 40
+        p2x = p3x = 80
         p2y = 100
         p3y = 60
         p4y = p5y = 40
-        p5x = p6x = 160
+        p5x = p6x = 200
         radius = 3
         canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Diamond Scheibe")
         canvas.create_polygon(p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, p5x, p5y, p6x, p6y, outline="black", fill="")
@@ -111,6 +113,10 @@ class MainPage(Frame):
         canvas.create_text(p3x - 20, p3y, fill="darkblue", font="Times 10 italic bold", text="p3")
         DrawUtil.drawCicle(p4x, p4y, radius, canvas)
         canvas.create_text(p4x - 20, p4y, fill="darkblue", font="Times 10 italic bold", text="p4")
+
+        axisX = p2x
+        axisY = p3y + (p2y - p3y) / 2
+        DrawUtil.drawAxis(axisX, axisY, 50, "red", 270, canvas)
 
     def __createAbrichtScheibeFrame(self):
         row = 0
