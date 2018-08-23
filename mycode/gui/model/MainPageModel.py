@@ -4,6 +4,7 @@ from mycode.util.CalcUtil import *
 
 class MainPageModel:
     def __init__(self):
+        self.abrichtArbeitPoint = MyPoint(0, 0)
         self.abricht_p1 = MyPoint(-2, 0)
         self.abricht_p2 = MyPoint(2, 0)
 
@@ -11,6 +12,13 @@ class MainPageModel:
         self.diamond_p2 = MyPoint(-1, 0)
         self.diamond_p3 = MyPoint(1, 0)
         self.diamond_p4 = MyPoint(3, -2)
+
+        self.abricht_diam = 40
+        self.abricht_flansch = 20
+        self.diamond_diam = 40
+        self.diamond_flansch = 20
+        self.deltax = 100
+        self.deltay = 100
 
     def calcAbrichtScheibeWidth(self):
         return CalcUtil.calcDistanceBetween(self.abricht_p1, self.abricht_p2)

@@ -12,7 +12,7 @@ class DiamondPointsPageController:
 
     def openDiamondPage(self):
         window = Toplevel(self.parent)
-        WindowUtil.setWindowAttributes("Diamond Points Page", 600, 400, window)
+        WindowUtil.setWindowAttributes("Diamond Points Page", 500, 400, window)
         self.diamondPointsPage = DiamondPointsPage(window)
         self.__updateView()
 
