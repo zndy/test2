@@ -4,7 +4,6 @@ from mycode.util.CalcUtil import *
 
 class MainPageModel:
     def __init__(self):
-        self.abrichtArbeitPoint = MyPoint(0, 0)
         self.abricht_p1 = MyPoint(-2, 0)
         self.abricht_p2 = MyPoint(2, 0)
 
