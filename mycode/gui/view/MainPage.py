@@ -74,30 +74,43 @@ class MainPage(Frame):
     def __drawAbrichtScheibe(self):
         canvas = Canvas(self.canvasFrame, width=200, height=200)
         canvas.grid(row=0, column=0, columnspan=1)
-        p1x = 60
+        width = 40
+        height = 80
+        p1x = 40
         p1y = p2y = 80
-        p2x = p3x = 100
-        p3y = 160
+        p2x = p3x = p1x + width
+        p3y = p2y + height
+        radius = 3
         canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Abricht Scheibe")
         canvas.create_rectangle(p1x, p1y, p3x, p3y)
-        DrawUtil.drawCicle(p1x, p1y, 3, canvas)
+        DrawUtil.drawCicle(p1x, p1y, radius, canvas)
         canvas.create_text(p1x, p1y - 10, fill="darkblue", font="Times 10 italic bold", text="p1")
-        DrawUtil.drawCicle(p2x, p2y, 3, canvas)
+        DrawUtil.drawCicle(p2x, p2y, radius, canvas)
         canvas.create_text(p2x, p2y - 10, fill="darkblue", font="Times 10 italic bold", text="p2")
+
+        DrawUtil.drawAxis(60, 80, 50, "red", 0, canvas)
 
     def __drawDiamondScheibe(self):
         canvas = Canvas(self.canvasFrame, width=200, height=200)
         canvas.grid(row=0, column=1, columnspan=1)
-        p1x = 60
-        p1y = p2y = 80
-        p2x = p3x = 100
-        p3y = 160
+        p1x = p4x = 60
+        p1y = p6y = 120
+        p2x = p3x = 40
+        p2y = 100
+        p3y = 60
+        p4y = p5y = 40
+        p5x = p6x = 160
+        radius = 3
         canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Diamond Scheibe")
-        canvas.create_rectangle(p1x, p1y, p3x, p3y)
-        DrawUtil.drawCicle(p1x, p1y, 3, canvas)
-        canvas.create_text(p1x, p1y - 10, fill="darkblue", font="Times 10 italic bold", text="p1")
-        DrawUtil.drawCicle(p2x, p2y, 3, canvas)
-        canvas.create_text(p2x, p2y - 10, fill="darkblue", font="Times 10 italic bold", text="p2")
+        canvas.create_polygon(p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, p5x, p5y, p6x, p6y, outline="black", fill="")
+        DrawUtil.drawCicle(p1x, p1y, radius, canvas)
+        canvas.create_text(p1x - 20, p1y, fill="darkblue", font="Times 10 italic bold", text="p1")
+        DrawUtil.drawCicle(p2x, p2y, radius, canvas)
+        canvas.create_text(p2x - 20, p2y, fill="darkblue", font="Times 10 italic bold", text="p2")
+        DrawUtil.drawCicle(p3x, p3y, radius, canvas)
+        canvas.create_text(p3x - 20, p3y, fill="darkblue", font="Times 10 italic bold", text="p3")
+        DrawUtil.drawCicle(p4x, p4y, radius, canvas)
+        canvas.create_text(p4x - 20, p4y, fill="darkblue", font="Times 10 italic bold", text="p4")
 
     def __createAbrichtScheibeFrame(self):
         row = 0
