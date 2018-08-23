@@ -90,7 +90,7 @@ class MainPage(Frame):
 
         axisX = p1x + (p2x - p1x) / 2
         axisY = p1y
-        DrawUtil.drawAxis(axisX, axisY, 50, "red", 0, canvas)
+        DrawUtil.drawAxis(axisX, axisY, 51, "red", 0, canvas)
 
     def __drawDiamondScheibe(self):
         canvas = Canvas(self.canvasFrame, width=200, height=200)
@@ -116,7 +116,7 @@ class MainPage(Frame):
 
         axisX = p2x
         axisY = p3y + (p2y - p3y) / 2
-        DrawUtil.drawAxis(axisX, axisY, 50, "red", 270, canvas)
+        DrawUtil.drawAxis(axisX, axisY, 51, "red", 270, canvas)
 
     def __createAbrichtScheibeFrame(self):
         row = 0
