@@ -14,8 +14,9 @@ class MainPageController:
 
     def openMainPage(self):
         self.window = Tk()
-        WindowUtil.setWindowAttributes("Abrichten Page", 800, 650, self.window)
+        WindowUtil.setWindowAttributes("Abrichten Page", 450, 550, self.window)
         self.mainPage = MainPage(self.window)
+        self.refreshViewFromModel()
         self.mainPage.addCalcBtnListener(self.calcBtnPressed)
         self.window.mainloop()
 
@@ -23,6 +24,23 @@ class MainPageController:
         self.saveViewDataToModel()
         self.updateDiamondPointsPageModel()
         self.openDiamondPage()
+
+    def refreshViewFromModel(self):
+        # abricht scheibe value
+        self.mainPage.abricht_p1x.set(self.mainPageModel.abricht_p1.getX())
+        self.mainPage.abricht_p1y.set(self.mainPageModel.abricht_p1.getY())
+        self.mainPage.abricht_p2x.set(self.mainPageModel.abricht_p2.getX())
+        self.mainPage.abricht_p2y.set(self.mainPageModel.abricht_p2.getY())
+
+        # diamond scheibe value
+        self.mainPage.diamond_p1x.set(self.mainPageModel.diamond_p1.getX())
+        self.mainPage.diamond_p1y.set(self.mainPageModel.diamond_p1.getY())
+        self.mainPage.diamond_p2x.set(self.mainPageModel.diamond_p2.getX())
+        self.mainPage.diamond_p2y.set(self.mainPageModel.diamond_p2.getY())
+        self.mainPage.diamond_p3x.set(self.mainPageModel.diamond_p3.getX())
+        self.mainPage.diamond_p3y.set(self.mainPageModel.diamond_p3.getY())
+        self.mainPage.diamond_p4x.set(self.mainPageModel.diamond_p4.getX())
+        self.mainPage.diamond_p4y.set(self.mainPageModel.diamond_p4.getY())
 
     def saveViewDataToModel(self):
         self.mainPageModel.abricht_p1.setX(self.mainPage.abricht_p1x.get())

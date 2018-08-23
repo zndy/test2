@@ -23,8 +23,6 @@ class MainPage(Frame):
         self.diamond_p4x = IntVar()
         self.diamond_p4y = IntVar()
 
-        self.__setDefaultValues()
-
         self.row = 0
         self.canvasFrame = Frame(self.window)
         self.canvasFrame.grid(row=self.row, column=0, columnspan=1)
@@ -46,23 +44,6 @@ class MainPage(Frame):
         self.row += 1
         self.calcButton = Button(text="calc", bg="yellow", fg="red")
         self.calcButton.grid(row=self.row, column=0)
-
-    def __setDefaultValues(self):
-        # abricht scheibe value
-        self.abricht_p1x.set(-2)
-        self.abricht_p1y.set(0)
-        self.abricht_p2x.set(2)
-        self.abricht_p2y.set(0)
-
-        # diamond scheibe value
-        self.diamond_p1x.set(-3)
-        self.diamond_p1y.set(-2)
-        self.diamond_p2x.set(-1)
-        self.diamond_p2y.set(0)
-        self.diamond_p3x.set(1)
-        self.diamond_p3y.set(0)
-        self.diamond_p4x.set(3)
-        self.diamond_p4y.set(-2)
 
     def __createCanvasFrame(self):
         # canvas.create_line(0, 0, 200, 100)
