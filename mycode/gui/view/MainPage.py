@@ -25,6 +25,12 @@ class MainPage(Frame):
         self.__setDefaultValues()
 
         self.row = 0
+        self.canvasFrame = Frame(self.window)
+        self.canvasFrame.grid(row=self.row, column=0, columnspan=7)
+        self.__createCanvasFrame()
+
+        self.__createEmptyRow()
+        self.row += 1
         self.abrichtScheibeFrame = Frame(self.window)
         self.abrichtScheibeFrame.grid(row=self.row, column=0, columnspan=7)
         self.__createAbrichtScheibeFrame()
@@ -57,9 +63,12 @@ class MainPage(Frame):
         self.diamond_p4x.set(3)
         self.diamond_p4y.set(-2)
 
-    def __createEmptyRow(self):
-        self.row += 1
-        Label().grid(row=self.row, column=0)
+    def __createCanvasFrame(self):
+        w = Canvas(self.canvasFrame, width=200, height=100)
+        w.grid(row=2, column=2, columnspan=4)
+        w.create_line(0, 0, 200, 100)
+        w.create_line(0, 100, 200, 0, fill="red", dash=(4, 4))
+        w.create_rectangle(50, 25, 150, 75, fill="blue")
 
     def __createAbrichtScheibeFrame(self):
         row = 0
@@ -90,3 +99,7 @@ class MainPage(Frame):
 
     def addCalcBtnListener(self, func):
         self.calcButton.bind("<ButtonRelease-1>", func)
+
+    def __createEmptyRow(self):
+        self.row += 1
+        Label(self.window).grid(row=self.row, column=0)

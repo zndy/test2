@@ -6,9 +6,9 @@ class DiamondPointsPageModel:
     def __init__(self):
         self.abrichtScheibeWidth = 0
 
-        self.diamondPointA1 = MyPoint()
-        self.diamondPointA2 = MyPoint()
-        self.diamondPointB1 = MyPoint()
-        self.diamondPointB2 = MyPoint()
-        self.diamondPointC1 = MyPoint()
-        self.diamondPointC2 = MyPoint()
+        self.diamondPointA1 = MyPoint
+        self.diamondPointA2 = MyPoint
+        self.diamondPointB1 = MyPoint
+        self.diamondPointB2 = MyPoint
+        self.diamondPointC1 = MyPoint
+        self.diamondPointC2 = MyPoint
