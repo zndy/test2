@@ -18,7 +18,7 @@ class DiamondPointsPageController:
 
     def __updateView(self):
         self.diamondPointsPage.abrichtScheibeWidth.set(self.diamondPointsPageModel.abrichtScheibeWidth)
-        self.diamondPointsPage.abrichtAngle.set(self.diamondPointsPageModel.abrichtAngle)
+        self.diamondPointsPage.abrichtAngle.set(self.diamondPointsPageModel.abrichtAngleDeg)
         self.diamondPointsPage.diamond_a1x.set(self.diamondPointsPageModel.diamondPointA1.getX())
         self.diamondPointsPage.diamond_a1y.set(self.diamondPointsPageModel.diamondPointA1.getY())
         self.diamondPointsPage.diamond_a2x.set(self.diamondPointsPageModel.diamondPointA2.getX())

@@ -5,7 +5,7 @@ from mycode.entity.MyPoint import *
 class DiamondPointsPageModel:
     def __init__(self):
         self.abrichtScheibeWidth = 0
-        self.abrichtAngle = 0
+        self.abrichtAngleDeg = 0
 
         self.diamondPointA1 = MyPoint
         self.diamondPointA2 = MyPoint
