@@ -11,44 +11,44 @@ class DrawUtil:
 
     @staticmethod
     def drawAxis(x, y, r, color, angle, canvas=Canvas):
-        horizontalP1 = MyPoint(x - r, y)
-        horizontalP2 = MyPoint(x + r, y)
-        verticalP1 = MyPoint(x, y - r)
-        verticalP2 = MyPoint(x, y + r)
+        axisxP1 = MyPoint(x - r, y)
+        axisxP2 = MyPoint(x + r, y)
+        axisyP1 = MyPoint(x, y - r)
+        axisyP2 = MyPoint(x, y + r)
 
-        arrowxPos1 = MyPoint(horizontalP2.getX() - 5, horizontalP2.getY() - 5)
-        arrowxPos2 = MyPoint(horizontalP2.getX() - 5, horizontalP2.getY() + 5)
-        arrowyPos1 = MyPoint(verticalP1.getX() - 5, verticalP1.getY() + 5)
-        arrowyPos2 = MyPoint(verticalP1.getX() + 5, verticalP1.getY() + 5)
+        arrowxP1 = MyPoint(axisxP2.getX() - 5, axisxP2.getY() - 5)
+        arrowxP2 = MyPoint(axisxP2.getX() - 5, axisxP2.getY() + 5)
+        arrowyP1 = MyPoint(axisyP1.getX() - 5, axisyP1.getY() + 5)
+        arrowyP2 = MyPoint(axisyP1.getX() + 5, axisyP1.getY() + 5)
 
-        charxPos = MyPoint(horizontalP2.getX() + 10, horizontalP2.getY())
-        charyPos = MyPoint(verticalP1.getX(), verticalP1.getY() - 10)
+        charxPos = MyPoint(axisxP2.getX() + 10, axisxP2.getY())
+        charyPos = MyPoint(axisyP1.getX(), axisyP1.getY() - 10)
 
         rotationMatrix = MatrixUtil.translationMatrix2D(x, y) * MatrixUtil.rotationMatrix2D(
             angle) * MatrixUtil.translationMatrix2D(-x, -y)
 
-        horizontalP1 = rotationMatrix * horizontalP1.toMatrix()
-        horizontalP2 = rotationMatrix * horizontalP2.toMatrix()
-        verticalP1 = rotationMatrix * verticalP1.toMatrix()
-        verticalP2 = rotationMatrix * verticalP2.toMatrix()
+        axisxP1 = rotationMatrix * axisxP1.toMatrix()
+        axisxP2 = rotationMatrix * axisxP2.toMatrix()
+        axisyP1 = rotationMatrix * axisyP1.toMatrix()
+        axisyP2 = rotationMatrix * axisyP2.toMatrix()
 
-        arrowxPos1 = rotationMatrix*arrowxPos1.toMatrix()
-        arrowxPos2 = rotationMatrix*arrowxPos2.toMatrix()
-        arrowyPos1 = rotationMatrix*arrowyPos1.toMatrix()
-        arrowyPos2 = rotationMatrix*arrowyPos2.toMatrix()
+        arrowxP1 = rotationMatrix * arrowxP1.toMatrix()
+        arrowxP2 = rotationMatrix * arrowxP2.toMatrix()
+        arrowyP1 = rotationMatrix * arrowyP1.toMatrix()
+        arrowyP2 = rotationMatrix * arrowyP2.toMatrix()
 
         charxPos = rotationMatrix * charxPos.toMatrix()
         charyPos = rotationMatrix * charyPos.toMatrix()
 
-        canvas.create_line(N(horizontalP1[0]), N(horizontalP1[1]), N(horizontalP2[0]), N(horizontalP2[1]), fill=color,
+        canvas.create_line(N(axisxP1[0]), N(axisxP1[1]), N(axisxP2[0]), N(axisxP2[1]), fill=color,
                            dash=(1, 1))
-        canvas.create_line(N(verticalP1[0]), N(verticalP1[1]), N(verticalP2[0]), N(verticalP2[1]), fill=color,
+        canvas.create_line(N(axisyP1[0]), N(axisyP1[1]), N(axisyP2[0]), N(axisyP2[1]), fill=color,
                            dash=(1, 1))
 
-        canvas.create_line(N(arrowxPos1[0]), N(arrowxPos1[1]), N(horizontalP2[0]), N(horizontalP2[1]), fill=color)
-        canvas.create_line(N(arrowxPos2[0]), N(arrowxPos2[1]), N(horizontalP2[0]), N(horizontalP2[1]), fill=color)
-        canvas.create_line(N(arrowyPos1[0]), N(arrowyPos1[1]), N(verticalP1[0]), N(verticalP1[1]), fill=color)
-        canvas.create_line(N(arrowyPos2[0]), N(arrowyPos2[1]), N(verticalP1[0]), N(verticalP1[1]), fill=color)
+        canvas.create_line(N(arrowxP1[0]), N(arrowxP1[1]), N(axisxP2[0]), N(axisxP2[1]), fill=color)
+        canvas.create_line(N(arrowxP2[0]), N(arrowxP2[1]), N(axisxP2[0]), N(axisxP2[1]), fill=color)
+        canvas.create_line(N(arrowyP1[0]), N(arrowyP1[1]), N(axisyP1[0]), N(axisyP1[1]), fill=color)
+        canvas.create_line(N(arrowyP2[0]), N(arrowyP2[1]), N(axisyP1[0]), N(axisyP1[1]), fill=color)
 
         canvas.create_text(N(charxPos[0]), N(charxPos[1]), fill="red", font="Times 10 italic bold", text="x")
         canvas.create_text(N(charyPos[0]), N(charyPos[1]), fill="red", font="Times 10 italic bold", text="y")
