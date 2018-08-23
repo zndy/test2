@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from mycode.entity.MyPoint import *
 from mycode.util.CalcUtil import *
 
 

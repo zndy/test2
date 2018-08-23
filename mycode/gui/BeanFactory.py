@@ -6,7 +6,6 @@ from tkinter import *
 
 class BeanFactory:
     def __init__(self):
-        self.root = Tk()
         self.mainPageModel = MainPageModel()
         self.diamondPointsPageModel = DiamondPointsPageModel()
 

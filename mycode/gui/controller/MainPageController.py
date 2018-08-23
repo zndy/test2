@@ -7,10 +7,17 @@ from mycode.gui.BeanFactory import *
 
 class MainPageController:
     def __init__(self):
+        self.window = Tk
         self.mainPageModel = beanFactory.mainPageModel
         self.diamondPointsPageModel = beanFactory.diamondPointsPageModel
-        self.mainPage = MainPage()
+        self.mainPage = MainPage
+
+    def openMainPage(self):
+        self.window = Tk()
+        WindowUtil.setWindowAttributes("Abrichten Page", 800, 650, self.window)
+        self.mainPage = MainPage(self.window)
         self.mainPage.addCalcBtnListener(self.calcBtnPressed)
+        self.window.mainloop()
 
     def calcBtnPressed(self, event):
         self.saveViewDataToModel()
@@ -42,4 +49,4 @@ class MainPageController:
         self.diamondPointsPageModel.diamondPointC2 = self.mainPageModel.calcDiamondPointC2()
 
     def openDiamondPage(self):
-        DiamondPointsPageController().openDiamondPage()
+        DiamondPointsPageController(self.window).openDiamondPage()

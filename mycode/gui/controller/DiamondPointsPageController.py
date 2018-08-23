@@ -5,12 +5,13 @@ from mycode.util.WindowUtil import *
 
 
 class DiamondPointsPageController:
-    def __init__(self):
+    def __init__(self,parent):
+        self.parent = parent
         self.diamondPointsPageModel = beanFactory.diamondPointsPageModel
         self.diamondPointsPage = DiamondPointsPage
 
     def openDiamondPage(self):
-        window = Toplevel(beanFactory.root)
+        window = Toplevel(self.parent)
         WindowUtil.setWindowAttributes("Diamond Points Page", 600, 400, window)
         self.diamondPointsPage = DiamondPointsPage(window)
         self.__updateView()
