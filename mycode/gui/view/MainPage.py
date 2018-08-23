@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from mycode.gui.BeanFactory import *
+from mycode.util.DrawUtil import *
 
 
 class MainPage(Frame):
@@ -26,7 +27,7 @@ class MainPage(Frame):
 
         self.row = 0
         self.canvasFrame = Frame(self.window)
-        self.canvasFrame.grid(row=self.row, column=0, columnspan=7)
+        self.canvasFrame.grid(row=self.row, column=0, columnspan=1)
         self.__createCanvasFrame()
 
         self.__createEmptyRow()
@@ -64,11 +65,39 @@ class MainPage(Frame):
         self.diamond_p4y.set(-2)
 
     def __createCanvasFrame(self):
-        w = Canvas(self.canvasFrame, width=200, height=100)
-        w.grid(row=2, column=2, columnspan=4)
-        w.create_line(0, 0, 200, 100)
-        w.create_line(0, 100, 200, 0, fill="red", dash=(4, 4))
-        w.create_rectangle(50, 25, 150, 75, fill="blue")
+        # canvas.create_line(0, 0, 200, 100)
+        # canvas.create_line(0, 100, 200, 0, fill="red", dash=(4, 4))
+        # canvas.create_rectangle(50, 25, 150, 75, fill="blue")
+        self.__drawAbrichtScheibe()
+        self.__drawDiamondScheibe()
+
+    def __drawAbrichtScheibe(self):
+        canvas = Canvas(self.canvasFrame, width=200, height=200)
+        canvas.grid(row=0, column=0, columnspan=1)
+        p1x = 60
+        p1y = p2y = 80
+        p2x = p3x = 100
+        p3y = 160
+        canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Abricht Scheibe")
+        canvas.create_rectangle(p1x, p1y, p3x, p3y)
+        DrawUtil.drawCicle(p1x, p1y, 3, canvas)
+        canvas.create_text(p1x, p1y - 10, fill="darkblue", font="Times 10 italic bold", text="p1")
+        DrawUtil.drawCicle(p2x, p2y, 3, canvas)
+        canvas.create_text(p2x, p2y - 10, fill="darkblue", font="Times 10 italic bold", text="p2")
+
+    def __drawDiamondScheibe(self):
+        canvas = Canvas(self.canvasFrame, width=200, height=200)
+        canvas.grid(row=0, column=1, columnspan=1)
+        p1x = 60
+        p1y = p2y = 80
+        p2x = p3x = 100
+        p3y = 160
+        canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Diamond Scheibe")
+        canvas.create_rectangle(p1x, p1y, p3x, p3y)
+        DrawUtil.drawCicle(p1x, p1y, 3, canvas)
+        canvas.create_text(p1x, p1y - 10, fill="darkblue", font="Times 10 italic bold", text="p1")
+        DrawUtil.drawCicle(p2x, p2y, 3, canvas)
+        canvas.create_text(p2x, p2y - 10, fill="darkblue", font="Times 10 italic bold", text="p2")
 
     def __createAbrichtScheibeFrame(self):
         row = 0
