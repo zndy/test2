@@ -40,6 +40,7 @@ class MainPageController:
 
     def updateDiamondPointsPageModel(self):
         self.diamondPointsPageModel.abrichtScheibeWidth = self.mainPageModel.calcAbrichtScheibeWidth()
+        self.diamondPointsPageModel.abrichtAngle = self.mainPageModel.calcAbrichtAngle()
 
         self.diamondPointsPageModel.diamondPointA1 = self.mainPageModel.calcDiamondPointA1()
         self.diamondPointsPageModel.diamondPointA2 = self.mainPageModel.calcDiamondPointA2()

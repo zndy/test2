@@ -7,6 +7,7 @@ class DiamondPointsPage(Frame):
         self.window = window
 
         self.abrichtScheibeWidth = IntVar()
+        self.abrichtAngle = IntVar()
 
         # diamond points value
         self.diamond_a1x = IntVar()
@@ -23,9 +24,9 @@ class DiamondPointsPage(Frame):
         self.diamond_c2y = IntVar()
 
         self.row = 0
-        self.abrichtScheibeWidthFrame = Frame(self.window)
-        self.abrichtScheibeWidthFrame.grid(row=self.row, column=0, columnspan=2)
-        self.__createAbrichtenScheibeWidthFrame()
+        self.abrichtScheibeFrame = Frame(self.window)
+        self.abrichtScheibeFrame.grid(row=self.row, column=0, columnspan=2)
+        self.__createAbrichtenScheibeFrame()
 
         self.__createEmptyRow(self.window)
         self.row += 1
@@ -33,11 +34,13 @@ class DiamondPointsPage(Frame):
         self.diamondPointFrame.grid(row=self.row, column=0, columnspan=5)
         self.__createDiamondPointFrame()
 
-    def __createAbrichtenScheibeWidthFrame(self):
+    def __createAbrichtenScheibeFrame(self):
         row = 0
-        Label(self.abrichtScheibeWidthFrame, text="Abrichten Scheibe Width: ").grid(row=row, column=0, columnspan=1)
-        Label(self.abrichtScheibeWidthFrame, textvariable=self.abrichtScheibeWidth).grid(row=row, column=1,
-                                                                                         columnspan=1)
+        Label(self.abrichtScheibeFrame, text="Abrichten Scheibe Width: ").grid(row=row, column=0, columnspan=1)
+        Label(self.abrichtScheibeFrame, textvariable=self.abrichtScheibeWidth).grid(row=row, column=1, columnspan=1)
+        row += 1
+        Label(self.abrichtScheibeFrame, text="Abrichten Angle: ").grid(row=row, column=0, columnspan=1)
+        Label(self.abrichtScheibeFrame, textvariable=self.abrichtAngle).grid(row=row, column=1, columnspan=1)
 
     def __createDiamondPointFrame(self):
         row = 0
