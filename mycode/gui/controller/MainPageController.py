@@ -42,6 +42,12 @@ class MainPageController:
         self.mainPage.diamond_p4x.set(self.mainPageModel.diamond_p4.getX())
         self.mainPage.diamond_p4y.set(self.mainPageModel.diamond_p4.getY())
 
+        #parameters
+        self.mainPage.abricht_flansch.set(self.mainPageModel.abricht_flansch)
+        self.mainPage.diamond_flansch.set(self.mainPageModel.diamond_flansch)
+        self.mainPage.deltax.set(self.mainPageModel.deltax)
+        self.mainPage.deltay.set(self.mainPageModel.deltay)
+
     def saveViewDataToModel(self):
         self.mainPageModel.abricht_p1.setX(self.mainPage.abricht_p1x.get())
         self.mainPageModel.abricht_p1.setY(self.mainPage.abricht_p1y.get())
@@ -55,6 +61,11 @@ class MainPageController:
         self.mainPageModel.diamond_p3.setY(self.mainPage.diamond_p3y.get())
         self.mainPageModel.diamond_p4.setX(self.mainPage.diamond_p4x.get())
         self.mainPageModel.diamond_p4.setY(self.mainPage.diamond_p4y.get())
+
+        self.mainPageModel.abricht_flansch = self.mainPage.abricht_flansch.get()
+        self.mainPageModel.diamond_flansch = self.mainPage.diamond_flansch.get()
+        self.mainPageModel.deltax = self.mainPage.deltax.get()
+        self.mainPageModel.deltay = self.mainPage.deltay.get()
 
     def updateDiamondPointsPageModel(self):
         self.diamondPointsPageModel.abrichtScheibeWidth = self.mainPageModel.calcAbrichtScheibeWidth()
