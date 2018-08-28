@@ -67,7 +67,7 @@ class MainPageController:
         self.mainPageModel.diamond_p4.setX(self.mainPage.diamond_p4x.get())
         self.mainPageModel.diamond_p4.setY(self.mainPage.diamond_p4y.get())
 
-        #parameters
+        # parameters
         self.mainPageModel.beginDistance = self.mainPage.beginDistance.get()
         self.mainPageModel.abricht_flansch = self.mainPage.abricht_flansch.get()
         self.mainPageModel.diamond_flansch = self.mainPage.diamond_flansch.get()
@@ -90,8 +90,25 @@ class MainPageController:
     def calcResult(self):
         calculator = AbrichtenPositionCalculator()
         result = calculator.calc()
-        self.diamondPointsPageModel.xResult = result.get(calculator.x)
-        self.diamondPointsPageModel.yResult = result.get(calculator.y)
+        xResult = result.get(calculator.x)
+        yResult = result.get(calculator.y)
+
+        parameters = {}
+        parameters[calculator.v] = self.diamondPointsPageModel.abrichtAngleDeg
+        parameters[calculator.a_d] = self.mainPageModel.abricht_diameter
+        parameters[calculator.d_d] = self.mainPageModel.diamond_diameter
+        parameters[calculator.dx] = self.mainPageModel.deltax
+        parameters[calculator.dy] = self.mainPageModel.deltay
+        parameters[calculator.a_f] = self.mainPageModel.abricht_flansch
+        parameters[calculator.d_f] = self.mainPageModel.diamond_flansch
+
+        # remove parameter which value = -1
+        for k, v in list(parameters.items()):
+            if v == -1:
+                del parameters[k]
+
+        self.diamondPointsPageModel.xResult = xResult.subs(parameters).evalf()
+        self.diamondPointsPageModel.yResult = yResult.subs(parameters).evalf()
 
     def openDiamondPage(self):
         DiamondPointsPageController(self.window).openDiamondPage()
