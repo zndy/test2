@@ -15,6 +15,7 @@ from mycode.gui.BeanFactory import *
 
 class AbrichtenPositionCalculator:
 
+
     def __init__(self):
         self.mainPageModel = beanFactory.mainPageModel
         self.diamondPointsPageModel = beanFactory.diamondPointsPageModel
@@ -57,6 +58,20 @@ def test1():
     print(yResult.subs({v: 30, d_a: 10, d_d: 20, deltax: 50, deltay: 40, f_a: 7, f_d: 8, px: 5, py: 0}).evalf())
     print(xResult.subs({v: 30, d_a: 10, d_d: 20, deltax: 50, deltay: 40, f_d: 8, px: 5, py: 0}).evalf())
     print(yResult.subs({v: 30, d_a: 10, d_d: 20, deltax: 50, deltay: 40, f_a: 7, px: 5, py: 0}).evalf())
+
+    parameters = {}
+    strv = 'v'
+    parameters[strv] = 30
+    parameters['d_a']=10
+    parameters['d_d']=20
+    parameters['deltax']=50
+    parameters['deltay']=40
+    parameters['f_a']=7
+    parameters['f_d']=8
+    parameters['px']=5
+    parameters['py']=0
+    print(xResult.subs(parameters).evalf())
+    print(yResult.subs(parameters).evalf())
 
 
 if __name__ == "__main__":
