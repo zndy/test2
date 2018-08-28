@@ -13,3 +13,6 @@ class DiamondPointsPageModel:
         self.diamondPointB2 = MyPoint
         self.diamondPointC1 = MyPoint
         self.diamondPointC2 = MyPoint
+
+        self.xResult = Add
+        self.yResult = Add

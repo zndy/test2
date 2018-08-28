@@ -3,6 +3,7 @@ from mycode.gui.view.MainPage import *
 from mycode.gui.controller.DiamondPointsPageController import *
 from mycode.util.WindowUtil import *
 from mycode.gui.BeanFactory import *
+from mycode.gui.AbrichtPositionCalculator import *
 
 
 class MainPageController:
@@ -42,7 +43,7 @@ class MainPageController:
         self.mainPage.diamond_p4x.set(self.mainPageModel.diamond_p4.getX())
         self.mainPage.diamond_p4y.set(self.mainPageModel.diamond_p4.getY())
 
-        #parameters
+        # parameters
         self.mainPage.abricht_flansch.set(self.mainPageModel.abricht_flansch)
         self.mainPage.diamond_flansch.set(self.mainPageModel.diamond_flansch)
         self.mainPage.deltax.set(self.mainPageModel.deltax)
@@ -77,6 +78,11 @@ class MainPageController:
         self.diamondPointsPageModel.diamondPointB2 = self.mainPageModel.calcDiamondPointB2()
         self.diamondPointsPageModel.diamondPointC1 = self.mainPageModel.calcDiamondPointC1()
         self.diamondPointsPageModel.diamondPointC2 = self.mainPageModel.calcDiamondPointC2()
+
+        calculator = AbrichtenPositionCalculator()
+        result = calculator.calc()
+        self.diamondPointsPageModel.xResult = result.get(calculator.x)
+        self.diamondPointsPageModel.yResult = result.get(calculator.y)
 
     def openDiamondPage(self):
         DiamondPointsPageController(self.window).openDiamondPage()

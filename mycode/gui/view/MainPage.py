@@ -22,7 +22,7 @@ class MainPage(Frame):
         self.diamond_p4x = IntVar()
         self.diamond_p4y = IntVar()
 
-        #paras
+        # paras
         self.abricht_flansch = IntVar()
         self.diamond_flansch = IntVar()
         self.deltax = IntVar()
@@ -147,7 +147,6 @@ class MainPage(Frame):
     def __createInputEntry(self, frame, name, row, entry):
         Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
         Entry(frame, textvariable=entry).grid(row=row, column=1, columnspan=1)
-
 
     def addCalcBtnListener(self, func):
         self.calcButton.bind("<ButtonRelease-1>", func)

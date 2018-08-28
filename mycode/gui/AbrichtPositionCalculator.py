@@ -76,6 +76,7 @@ def test1():
     parameters[calculator.f_d] = 8
     parameters[calculator.px] = 5
     parameters[calculator.py] = 0
+    print(type(xResult))
     print(xResult.subs(parameters).evalf())
     print(yResult.subs(parameters).evalf())
 

@@ -23,6 +23,10 @@ class DiamondPointsPage(Frame):
         self.diamond_c2x = IntVar()
         self.diamond_c2y = IntVar()
 
+        # result
+        self.xResult = StringVar()
+        self.yResult = StringVar()
+
         self.row = 0
         self.abrichtScheibeFrame = Frame(self.window)
         self.abrichtScheibeFrame.grid(row=self.row, column=0, columnspan=2)
@@ -33,6 +37,12 @@ class DiamondPointsPage(Frame):
         self.diamondPointFrame = Frame(self.window)
         self.diamondPointFrame.grid(row=self.row, column=0, columnspan=5)
         self.__createDiamondPointFrame()
+
+        self.__createEmptyRow(self.window)
+        self.row += 1
+        self.resultFrame = Frame(self.window)
+        self.resultFrame.grid(row=self.row, column=0, columnspan=2)
+        self.__createResultFrame()
 
     def __createAbrichtenScheibeFrame(self):
         row = 0
@@ -46,24 +56,42 @@ class DiamondPointsPage(Frame):
         row = 0
         Label(self.diamondPointFrame, text='Diamond Points: ').grid(row=row, column=0)
         row += 1
-        self.__createResultEntry(self.diamondPointFrame, "Diamond Point A1", row, self.diamond_a1x, self.diamond_a1y)
+        self.__createPointResultEntry(self.diamondPointFrame, "Diamond Point A1", row, self.diamond_a1x,
+                                      self.diamond_a1y)
         row += 1
-        self.__createResultEntry(self.diamondPointFrame, "Diamond Point A2", row, self.diamond_a2x, self.diamond_a2y)
+        self.__createPointResultEntry(self.diamondPointFrame, "Diamond Point A2", row, self.diamond_a2x,
+                                      self.diamond_a2y)
         row += 1
-        self.__createResultEntry(self.diamondPointFrame, "Diamond Point B1", row, self.diamond_b1x, self.diamond_b1y)
+        self.__createPointResultEntry(self.diamondPointFrame, "Diamond Point B1", row, self.diamond_b1x,
+                                      self.diamond_b1y)
         row += 1
-        self.__createResultEntry(self.diamondPointFrame, "Diamond Point B2", row, self.diamond_b2x, self.diamond_b2y)
+        self.__createPointResultEntry(self.diamondPointFrame, "Diamond Point B2", row, self.diamond_b2x,
+                                      self.diamond_b2y)
         row += 1
-        self.__createResultEntry(self.diamondPointFrame, "Diamond Point C1", row, self.diamond_c1x, self.diamond_c1y)
+        self.__createPointResultEntry(self.diamondPointFrame, "Diamond Point C1", row, self.diamond_c1x,
+                                      self.diamond_c1y)
         row += 1
-        self.__createResultEntry(self.diamondPointFrame, "Diamond Point C2", row, self.diamond_c2x, self.diamond_c2y)
+        self.__createPointResultEntry(self.diamondPointFrame, "Diamond Point C2", row, self.diamond_c2x,
+                                      self.diamond_c2y)
 
-    def __createResultEntry(self, frame, name, row, entryX, entryY):
+    def __createResultFrame(self):
+        row = 0
+        Label(self.resultFrame, text='result: ').grid(row=row, column=0)
+        row += 1
+        self.__createResultEntry(self.resultFrame, "x", row, self.xResult)
+        row += 1
+        self.__createResultEntry(self.resultFrame, "y", row, self.yResult)
+
+    def __createPointResultEntry(self, frame, name, row, entryX, entryY):
         Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
         Label(frame, text='x:').grid(row=row, column=1, columnspan=1)
         Label(frame, textvariable=entryX).grid(row=row, column=2, columnspan=1)
         Label(frame, text='y:').grid(row=row, column=3, columnspan=1)
         Label(frame, textvariable=entryY).grid(row=row, column=4, columnspan=1)
+
+    def __createResultEntry(self, frame, name, row, entry):
+        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
+        Label(frame, textvariable=entry).grid(row=row, column=1, columnspan=1)
 
     def __createEmptyRow(self, window):
         self.row += 1
