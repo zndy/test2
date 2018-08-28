@@ -22,17 +22,30 @@ class MainPage(Frame):
         self.diamond_p4x = IntVar()
         self.diamond_p4y = IntVar()
 
+        #paras
+        self.abricht_flansch = IntVar()
+        self.diamond_flansch = IntVar()
+        self.deltax = IntVar()
+        self.deltay = IntVar()
+
         self.canvasFrame = Frame(self.window)
         self.__createCanvasFrame()
-        self.canvasFrame.place(x=150, y=20)
+        self.canvasFrame.place(x=200, y=20)
+        # self.canvasFrame.pack()
 
         self.abrichtScheibeFrame = Frame(self.window)
         self.__createAbrichtScheibeFrame()
         self.abrichtScheibeFrame.place(x=25, y=250)
+        # self.abrichtScheibeFrame.pack(side = LEFT)
 
         self.diamondScheibeFrame = Frame(self.window)
         self.__createDiamondScheibeFrame()
         self.diamondScheibeFrame.place(x=0, y=350)
+        # self.diamondScheibeFrame.pack(side = LEFT)
+
+        self.paraFrame = Frame(self.window)
+        self.__createParaFrame()
+        self.paraFrame.place(x=450, y=250)
 
         self.calcButton = Button(text="calc", bg="yellow", fg="red")
         self.calcButton.place(x=750, y=450)
@@ -92,28 +105,49 @@ class MainPage(Frame):
         row = 0
         Label(self.abrichtScheibeFrame, text='Abricht Scheibe: ').grid(row=row)
         row += 1
-        self.__createInputEntry(self.abrichtScheibeFrame, "Abricht P1", row, self.abricht_p1x, self.abricht_p1y)
+        self.__createPointInputEntry(self.abrichtScheibeFrame, "Abricht P1", row, self.abricht_p1x, self.abricht_p1y)
         row += 1
-        self.__createInputEntry(self.abrichtScheibeFrame, "Abricht P2", row, self.abricht_p2x, self.abricht_p2y)
+        self.__createPointInputEntry(self.abrichtScheibeFrame, "Abricht P2", row, self.abricht_p2x, self.abricht_p2y)
 
     def __createDiamondScheibeFrame(self):
         row = 0
         Label(self.diamondScheibeFrame, text='Diamond Scheibe: ').grid(row=row)
         row += 1
-        self.__createInputEntry(self.diamondScheibeFrame, "DiamondScheibe P1", row, self.diamond_p1x, self.diamond_p1y)
+        self.__createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P1", row, self.diamond_p1x,
+                                     self.diamond_p1y)
         row += 1
-        self.__createInputEntry(self.diamondScheibeFrame, "DiamondScheibe P2", row, self.diamond_p2x, self.diamond_p2y)
+        self.__createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P2", row, self.diamond_p2x,
+                                     self.diamond_p2y)
         row += 1
-        self.__createInputEntry(self.diamondScheibeFrame, "DiamondScheibe P3", row, self.diamond_p3x, self.diamond_p3y)
+        self.__createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P3", row, self.diamond_p3x,
+                                     self.diamond_p3y)
         row += 1
-        self.__createInputEntry(self.diamondScheibeFrame, "DiamondScheibe P4", row, self.diamond_p4x, self.diamond_p4y)
+        self.__createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P4", row, self.diamond_p4x,
+                                     self.diamond_p4y)
 
-    def __createInputEntry(self, frame, name, row, entryX, entryY):
+    def __createParaFrame(self):
+        row = 0
+        Label(self.paraFrame, text='Parameters: ').grid(row=row)
+        row += 1
+        self.__createInputEntry(self.paraFrame, "AbrichtScheibe Flansch", row, self.abricht_flansch)
+        row += 1
+        self.__createInputEntry(self.paraFrame, "DiamondScheibe Flansch", row, self.diamond_flansch)
+        row += 1
+        self.__createInputEntry(self.paraFrame, "Delta X", row, self.deltax)
+        row += 1
+        self.__createInputEntry(self.paraFrame, "Delta Y", row, self.deltay)
+
+    def __createPointInputEntry(self, frame, name, row, entryX, entryY):
         Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
         Label(frame, text='x:').grid(row=row, column=1, columnspan=1)
         Entry(frame, textvariable=entryX).grid(row=row, column=2, columnspan=1)
         Label(frame, text='y:').grid(row=row, column=3, columnspan=1)
         Entry(frame, textvariable=entryY).grid(row=row, column=4, columnspan=1)
+
+    def __createInputEntry(self, frame, name, row, entry):
+        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
+        Entry(frame, textvariable=entry).grid(row=row, column=1, columnspan=1)
+
 
     def addCalcBtnListener(self, func):
         self.calcButton.bind("<ButtonRelease-1>", func)
