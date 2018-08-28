@@ -24,6 +24,7 @@ class MainPageController:
     def calcBtnPressed(self, event):
         self.saveViewDataToModel()
         self.updateDiamondPointsPageModel()
+        self.calcResult()
         self.openDiamondPage()
 
     def refreshViewFromModel(self):
@@ -44,10 +45,13 @@ class MainPageController:
         self.mainPage.diamond_p4y.set(self.mainPageModel.diamond_p4.getY())
 
         # parameters
+        self.mainPage.beginDistance.set(self.mainPageModel.beginDistance)
         self.mainPage.abricht_flansch.set(self.mainPageModel.abricht_flansch)
         self.mainPage.diamond_flansch.set(self.mainPageModel.diamond_flansch)
         self.mainPage.deltax.set(self.mainPageModel.deltax)
         self.mainPage.deltay.set(self.mainPageModel.deltay)
+        self.mainPage.abricht_diameter.set(self.mainPageModel.abricht_diameter)
+        self.mainPage.diamond_diameter.set(self.mainPageModel.diamond_diameter)
 
     def saveViewDataToModel(self):
         self.mainPageModel.abricht_p1.setX(self.mainPage.abricht_p1x.get())
@@ -63,10 +67,14 @@ class MainPageController:
         self.mainPageModel.diamond_p4.setX(self.mainPage.diamond_p4x.get())
         self.mainPageModel.diamond_p4.setY(self.mainPage.diamond_p4y.get())
 
+        #parameters
+        self.mainPageModel.beginDistance = self.mainPage.beginDistance.get()
         self.mainPageModel.abricht_flansch = self.mainPage.abricht_flansch.get()
         self.mainPageModel.diamond_flansch = self.mainPage.diamond_flansch.get()
         self.mainPageModel.deltax = self.mainPage.deltax.get()
         self.mainPageModel.deltay = self.mainPage.deltay.get()
+        self.mainPageModel.abricht_diameter = self.mainPage.abricht_diameter.get()
+        self.mainPageModel.diamond_diameter = self.mainPage.diamond_diameter.get()
 
     def updateDiamondPointsPageModel(self):
         self.diamondPointsPageModel.abrichtScheibeWidth = self.mainPageModel.calcAbrichtScheibeWidth()
@@ -79,6 +87,7 @@ class MainPageController:
         self.diamondPointsPageModel.diamondPointC1 = self.mainPageModel.calcDiamondPointC1()
         self.diamondPointsPageModel.diamondPointC2 = self.mainPageModel.calcDiamondPointC2()
 
+    def calcResult(self):
         calculator = AbrichtenPositionCalculator()
         result = calculator.calc()
         self.diamondPointsPageModel.xResult = result.get(calculator.x)

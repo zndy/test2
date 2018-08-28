@@ -33,9 +33,8 @@ class AbrichtenPositionCalculator:
 
     def __calcRight(self):
         diamondPoint = Matrix([self.px, self.py, 1])
-        right = MatrixUtil.translationMatrix2D(self.dx - self.d_d / 2,
-                                               self.dy - self.f_d) * MatrixUtil.rotationMatrix2D(
-            90) * diamondPoint
+        right = MatrixUtil.translationMatrix2D(self.dx - self.d_d / 2, self.dy - self.f_d) \
+                * MatrixUtil.rotationMatrix2D(90) * diamondPoint
         return right
 
     def calc(self):

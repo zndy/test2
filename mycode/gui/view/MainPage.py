@@ -23,10 +23,13 @@ class MainPage(Frame):
         self.diamond_p4y = IntVar()
 
         # paras
+        self.beginDistance = DoubleVar()
         self.abricht_flansch = IntVar()
         self.diamond_flansch = IntVar()
         self.deltax = IntVar()
         self.deltay = IntVar()
+        self.abricht_diameter = DoubleVar()
+        self.diamond_diameter = DoubleVar()
 
         self.canvasFrame = Frame(self.window)
         self.__createCanvasFrame()
@@ -129,6 +132,8 @@ class MainPage(Frame):
         row = 0
         Label(self.paraFrame, text='Parameters: ').grid(row=row)
         row += 1
+        self.__createInputEntry(self.paraFrame, "Anfang Abstand", row, self.beginDistance)
+        row += 1
         self.__createInputEntry(self.paraFrame, "AbrichtScheibe Flansch", row, self.abricht_flansch)
         row += 1
         self.__createInputEntry(self.paraFrame, "DiamondScheibe Flansch", row, self.diamond_flansch)
@@ -136,6 +141,10 @@ class MainPage(Frame):
         self.__createInputEntry(self.paraFrame, "Delta X", row, self.deltax)
         row += 1
         self.__createInputEntry(self.paraFrame, "Delta Y", row, self.deltay)
+        row += 1
+        self.__createInputEntry(self.paraFrame, "AbrichtScheibe Durchmesser", row, self.abricht_diameter)
+        row += 1
+        self.__createInputEntry(self.paraFrame, "DiamondScheibe Durchmesser", row, self.diamond_diameter)
 
     def __createPointInputEntry(self, frame, name, row, entryX, entryY):
         Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
