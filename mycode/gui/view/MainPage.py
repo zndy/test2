@@ -7,27 +7,27 @@ class MainPage(Frame):
     def __init__(self, window):
         self.window = window
         # abricht scheibe value
-        self.abricht_p1x = IntVar()
-        self.abricht_p1y = IntVar()
-        self.abricht_p2x = IntVar()
-        self.abricht_p2y = IntVar()
+        self.abricht_p1x = DoubleVar()
+        self.abricht_p1y = DoubleVar()
+        self.abricht_p2x = DoubleVar()
+        self.abricht_p2y = DoubleVar()
 
         # diamond scheibe value
-        self.diamond_p1x = IntVar()
-        self.diamond_p1y = IntVar()
-        self.diamond_p2x = IntVar()
-        self.diamond_p2y = IntVar()
-        self.diamond_p3x = IntVar()
-        self.diamond_p3y = IntVar()
-        self.diamond_p4x = IntVar()
-        self.diamond_p4y = IntVar()
+        self.diamond_p1x = DoubleVar()
+        self.diamond_p1y = DoubleVar()
+        self.diamond_p2x = DoubleVar()
+        self.diamond_p2y = DoubleVar()
+        self.diamond_p3x = DoubleVar()
+        self.diamond_p3y = DoubleVar()
+        self.diamond_p4x = DoubleVar()
+        self.diamond_p4y = DoubleVar()
 
         # paras
         self.beginDistance = DoubleVar()
-        self.abricht_flansch = IntVar()
-        self.diamond_flansch = IntVar()
-        self.deltax = IntVar()
-        self.deltay = IntVar()
+        self.abricht_flansch = DoubleVar()
+        self.diamond_flansch = DoubleVar()
+        self.deltax = DoubleVar()
+        self.deltay = DoubleVar()
         self.abricht_diameter = DoubleVar()
         self.diamond_diameter = DoubleVar()
 

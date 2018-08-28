@@ -6,22 +6,22 @@ class DiamondPointsPage(Frame):
     def __init__(self, window):
         self.window = window
 
-        self.abrichtScheibeWidth = IntVar()
-        self.abrichtAngle = IntVar()
+        self.abrichtScheibeWidth = DoubleVar()
+        self.abrichtAngle = DoubleVar()
 
         # diamond points value
-        self.diamond_a1x = IntVar()
-        self.diamond_a1y = IntVar()
-        self.diamond_a2x = IntVar()
-        self.diamond_a2y = IntVar()
-        self.diamond_b1x = IntVar()
-        self.diamond_b1y = IntVar()
-        self.diamond_b2x = IntVar()
-        self.diamond_b2y = IntVar()
-        self.diamond_c1x = IntVar()
-        self.diamond_c1y = IntVar()
-        self.diamond_c2x = IntVar()
-        self.diamond_c2y = IntVar()
+        self.diamond_a1x = DoubleVar()
+        self.diamond_a1y = DoubleVar()
+        self.diamond_a2x = DoubleVar()
+        self.diamond_a2y = DoubleVar()
+        self.diamond_b1x = DoubleVar()
+        self.diamond_b1y = DoubleVar()
+        self.diamond_b2x = DoubleVar()
+        self.diamond_b2y = DoubleVar()
+        self.diamond_c1x = DoubleVar()
+        self.diamond_c1y = DoubleVar()
+        self.diamond_c2x = DoubleVar()
+        self.diamond_c2y = DoubleVar()
 
         # result
         self.xResult = StringVar()
