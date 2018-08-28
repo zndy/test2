@@ -39,12 +39,24 @@ class AbrichtenPositionCalculator:
         print("left: " + str(left))
         right = self.__calcRight()
         print("right " + str(right))
-        result = solve([left[0] - right[0], left[1] - right[1]], x, y)
+        result = solve([left[0] - right[0], left[1] - right[1]], [x, y])
         print(result)
+        return result
 
 
 def main():
-    AbrichtenPositionCalculator().calc()
+    test1()
+
+
+def test1():
+    result = AbrichtenPositionCalculator().calc()
+    x, y, v, d_a, d_d, deltax, deltay, f_a, f_d, px, py = symbols('x y v d_a d_d deltax deltay f_a f_d px py')
+    xResult = result.get(x)
+    yResult = result.get(y)
+    print(xResult.subs({v: 30, d_a: 10, d_d: 20, deltax: 50, deltay: 40, f_a: 7, f_d: 8, px: 5, py: 0}).evalf())
+    print(yResult.subs({v: 30, d_a: 10, d_d: 20, deltax: 50, deltay: 40, f_a: 7, f_d: 8, px: 5, py: 0}).evalf())
+    print(xResult.subs({v: 30, d_a: 10, d_d: 20, deltax: 50, deltay: 40, f_d: 8, px: 5, py: 0}).evalf())
+    print(yResult.subs({v: 30, d_a: 10, d_d: 20, deltax: 50, deltay: 40, f_a: 7, px: 5, py: 0}).evalf())
 
 
 if __name__ == "__main__":
