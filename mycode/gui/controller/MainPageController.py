@@ -14,7 +14,7 @@ class MainPageController:
 
     def openMainPage(self):
         self.window = Tk()
-        WindowUtil.setWindowAttributes("Abrichten Page", 450, 550, self.window)
+        WindowUtil.setWindowAttributes("Abrichten Page", 800, 500, self.window)
         self.mainPage = MainPage(self.window)
         self.refreshViewFromModel()
         self.mainPage.addCalcBtnListener(self.calcBtnPressed)

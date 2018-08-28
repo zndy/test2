@@ -1,3 +1,5 @@
+from tarfile import calc_chksums
+
 from mycode.util.MatrixUtil import *
 from mycode.gui.BeanFactory import *
 

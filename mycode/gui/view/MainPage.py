@@ -6,7 +6,6 @@ from mycode.util.DrawUtil import *
 class MainPage(Frame):
     def __init__(self, window):
         self.window = window
-
         # abricht scheibe value
         self.abricht_p1x = IntVar()
         self.abricht_p1y = IntVar()
@@ -23,32 +22,22 @@ class MainPage(Frame):
         self.diamond_p4x = IntVar()
         self.diamond_p4y = IntVar()
 
-        self.row = 0
         self.canvasFrame = Frame(self.window)
-        self.canvasFrame.grid(row=self.row, column=0, columnspan=1)
         self.__createCanvasFrame()
+        self.canvasFrame.place(x=150, y=20)
 
-        self.__createEmptyRow()
-        self.row += 1
         self.abrichtScheibeFrame = Frame(self.window)
-        self.abrichtScheibeFrame.grid(row=self.row, column=0, columnspan=7)
         self.__createAbrichtScheibeFrame()
+        self.abrichtScheibeFrame.place(x=25, y=250)
 
-        self.__createEmptyRow()
-        self.row += 1
         self.diamondScheibeFrame = Frame(self.window)
-        self.diamondScheibeFrame.grid(row=self.row, column=0, columnspan=5)
         self.__createDiamondScheibeFrame()
+        self.diamondScheibeFrame.place(x=0, y=350)
 
-        self.__createEmptyRow()
-        self.row += 1
         self.calcButton = Button(text="calc", bg="yellow", fg="red")
-        self.calcButton.grid(row=self.row, column=0)
+        self.calcButton.place(x=750, y=450)
 
     def __createCanvasFrame(self):
-        # canvas.create_line(0, 0, 200, 100)
-        # canvas.create_line(0, 100, 200, 0, fill="red", dash=(4, 4))
-        # canvas.create_rectangle(50, 25, 150, 75, fill="blue")
         self.__drawAbrichtScheibe()
         self.__drawDiamondScheibe()
 
@@ -101,7 +90,7 @@ class MainPage(Frame):
 
     def __createAbrichtScheibeFrame(self):
         row = 0
-        Label(self.abrichtScheibeFrame, text='Abricht Scheibe: ').grid(row=row, column=0, columnspan=1)
+        Label(self.abrichtScheibeFrame, text='Abricht Scheibe: ').grid(row=row)
         row += 1
         self.__createInputEntry(self.abrichtScheibeFrame, "Abricht P1", row, self.abricht_p1x, self.abricht_p1y)
         row += 1
@@ -109,7 +98,7 @@ class MainPage(Frame):
 
     def __createDiamondScheibeFrame(self):
         row = 0
-        Label(self.diamondScheibeFrame, text='Diamond Scheibe: ').grid(row=row, column=0, columnspan=1)
+        Label(self.diamondScheibeFrame, text='Diamond Scheibe: ').grid(row=row)
         row += 1
         self.__createInputEntry(self.diamondScheibeFrame, "DiamondScheibe P1", row, self.diamond_p1x, self.diamond_p1y)
         row += 1
@@ -128,7 +117,3 @@ class MainPage(Frame):
 
     def addCalcBtnListener(self, func):
         self.calcButton.bind("<ButtonRelease-1>", func)
-
-    def __createEmptyRow(self):
-        self.row += 1
-        Label(self.window).grid(row=self.row, column=0)
