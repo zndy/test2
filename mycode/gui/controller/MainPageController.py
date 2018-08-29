@@ -2,7 +2,6 @@
 from mycode.gui.view.MainPage import *
 from mycode.gui.controller.DiamondPointsPageController import *
 from mycode.util.WindowUtil import *
-from mycode.gui.BeanFactory import *
 from mycode.gui.AbrichtPositionCalculator import *
 
 
