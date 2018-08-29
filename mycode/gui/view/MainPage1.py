@@ -31,54 +31,52 @@ class MainPage(Frame):
         self.abricht_diameter = DoubleVar()
         self.diamond_diameter = DoubleVar()
 
-        # Frames
-        # self.canvasFrame = Frame(self.window)
-        # self.__createCanvasFrame()
-        # self.canvasFrame.place(x=200, y=20)
-        #
-
-        self.diamondScheibeFrame = Frame(self.window)
-        self.__createDiamondScheibeFrame()
-        self.diamondScheibeFrame.place(x=0, y=20)
+        self.canvasFrame = Frame(self.window)
+        self.__createCanvasFrame()
+        self.canvasFrame.place(x=200, y=20)
+        # self.canvasFrame.pack()
 
         self.abrichtScheibeFrame = Frame(self.window)
         self.__createAbrichtScheibeFrame()
         self.abrichtScheibeFrame.place(x=25, y=250)
-        #
-        # self.paraFrame = Frame(self.window)
-        # self.__createParaFrame()
-        # self.paraFrame.place(x=450, y=250)
+        # self.abrichtScheibeFrame.pack(side = LEFT)
 
+        self.diamondScheibeFrame = Frame(self.window)
+        self.__createDiamondScheibeFrame()
+        self.diamondScheibeFrame.place(x=0, y=350)
+        # self.diamondScheibeFrame.pack(side = LEFT)
 
-
+        self.paraFrame = Frame(self.window)
+        self.__createParaFrame()
+        self.paraFrame.place(x=450, y=250)
 
         self.calcButton = Button(text="calc", bg="yellow", fg="red")
         self.calcButton.place(x=750, y=450)
 
-    # def __createCanvasFrame(self):
-    #     self.__drawAbrichtScheibe()
-    #     self.__drawDiamondScheibe()
-    #
-    # def __drawAbrichtScheibe(self):
-    #     canvas = Canvas(self.canvasFrame, width=200, height=200)
-    #     canvas.grid(row=0, column=0, columnspan=1)
-    #     width = 40
-    #     height = 80
-    #     p1x = 40
-    #     p1y = p2y = 80
-    #     p2x = p3x = p1x + width
-    #     p3y = p2y + height
-    #     radius = 3
-    #     canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Abricht Scheibe")
-    #     canvas.create_rectangle(p1x, p1y, p3x, p3y)
-    #     DrawUtil.drawCicle(p1x, p1y, radius, canvas)
-    #     canvas.create_text(p1x, p1y - 10, fill="darkblue", font="Times 10 italic bold", text="p1")
-    #     DrawUtil.drawCicle(p2x, p2y, radius, canvas)
-    #     canvas.create_text(p2x, p2y - 10, fill="darkblue", font="Times 10 italic bold", text="p2")
-    #
-    #     axisX = p1x + (p2x - p1x) / 2
-    #     axisY = p1y
-    #     DrawUtil.drawAxis(axisX, axisY, 51, "red", 0, canvas)
+    def __createCanvasFrame(self):
+        self.__drawAbrichtScheibe()
+        self.__drawDiamondScheibe()
+
+    def __drawAbrichtScheibe(self):
+        canvas = Canvas(self.canvasFrame, width=200, height=200)
+        canvas.grid(row=0, column=0, columnspan=1)
+        width = 40
+        height = 80
+        p1x = 40
+        p1y = p2y = 80
+        p2x = p3x = p1x + width
+        p3y = p2y + height
+        radius = 3
+        canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Abricht Scheibe")
+        canvas.create_rectangle(p1x, p1y, p3x, p3y)
+        DrawUtil.drawCicle(p1x, p1y, radius, canvas)
+        canvas.create_text(p1x, p1y - 10, fill="darkblue", font="Times 10 italic bold", text="p1")
+        DrawUtil.drawCicle(p2x, p2y, radius, canvas)
+        canvas.create_text(p2x, p2y - 10, fill="darkblue", font="Times 10 italic bold", text="p2")
+
+        axisX = p1x + (p2x - p1x) / 2
+        axisY = p1y
+        DrawUtil.drawAxis(axisX, axisY, 51, "red", 0, canvas)
 
     def __drawDiamondScheibe(self):
         canvas = Canvas(self.canvasFrame, width=200, height=200)
@@ -106,60 +104,29 @@ class MainPage(Frame):
         axisY = p3y + (p2y - p3y) / 2
         DrawUtil.drawAxis(axisX, axisY, 51, "red", 270, canvas)
 
+    def __createAbrichtScheibeFrame(self):
+        row = 0
+        Label(self.abrichtScheibeFrame, text='Abricht Scheibe: ').grid(row=row)
+        row += 1
+        WindowUtil.createPointInputEntry(self.abrichtScheibeFrame, "Abricht P1", row, self.abricht_p1x, self.abricht_p1y)
+        row += 1
+        WindowUtil.createPointInputEntry(self.abrichtScheibeFrame, "Abricht P2", row, self.abricht_p2x, self.abricht_p2y)
+
     def __createDiamondScheibeFrame(self):
         row = 0
         Label(self.diamondScheibeFrame, text='Diamond Scheibe: ').grid(row=row)
         row += 1
         WindowUtil.createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P1", row, self.diamond_p1x,
-                                         self.diamond_p1y)
+                              self.diamond_p1y)
         row += 1
         WindowUtil.createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P2", row, self.diamond_p2x,
-                                         self.diamond_p2y)
+                              self.diamond_p2y)
         row += 1
         WindowUtil.createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P3", row, self.diamond_p3x,
-                                         self.diamond_p3y)
+                              self.diamond_p3y)
         row += 1
         WindowUtil.createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P4", row, self.diamond_p4x,
-                                         self.diamond_p4y)
-
-    def __createAbrichtScheibeFrame(self):
-        self.__createAbrichtCanvasFrame()
-        self.__createAbrichtInputFrame()
-
-    def __createAbrichtCanvasFrame(self):
-        abrichtCanvasFrame = Frame(self.abrichtScheibeFrame)
-        abrichtCanvasFrame.pack()
-        canvas = Canvas(abrichtCanvasFrame, width=200, height=180)
-        canvas.pack()
-        width = 40
-        height = 80
-        p1x = 70
-        p1y = p2y = 90
-        p2x = p3x = p1x + width
-        p3y = p2y + height
-        radius = 3
-        canvas.create_text(90, 10, fill="darkblue", font="Times 10 italic bold", text="Abricht Scheibe")
-        canvas.create_rectangle(p1x, p1y, p3x, p3y)
-        DrawUtil.drawCicle(p1x, p1y, radius, canvas)
-        canvas.create_text(p1x, p1y - 10, fill="darkblue", font="Times 10 italic bold", text="p1")
-        DrawUtil.drawCicle(p2x, p2y, radius, canvas)
-        canvas.create_text(p2x, p2y - 10, fill="darkblue", font="Times 10 italic bold", text="p2")
-
-        axisX = p1x + (p2x - p1x) / 2
-        axisY = p1y
-        DrawUtil.drawAxis(axisX, axisY, 51, "red", 0, canvas)
-
-    def __createAbrichtInputFrame(self):
-        inputFrame = Frame(self.abrichtScheibeFrame)
-        inputFrame.pack(side = BOTTOM)
-        row = 0
-        Label(inputFrame, text='Abricht Scheibe: ').grid(row=row)
-        row += 1
-        WindowUtil.createPointInputEntry(inputFrame, "Abricht P1", row, self.abricht_p1x,
-                                         self.abricht_p1y)
-        row += 1
-        WindowUtil.createPointInputEntry(inputFrame, "Abricht P2", row, self.abricht_p2x,
-                                         self.abricht_p2y)
+                              self.diamond_p4y)
 
     def __createParaFrame(self):
         row = 0
@@ -178,6 +145,8 @@ class MainPage(Frame):
         WindowUtil.createInputEntry(self.paraFrame, "AbrichtScheibe Durchmesser", row, self.abricht_diameter)
         row += 1
         WindowUtil.createInputEntry(self.paraFrame, "DiamondScheibe Durchmesser", row, self.diamond_diameter)
+
+
 
     def addCalcBtnListener(self, func):
         self.calcButton.bind("<ButtonRelease-1>", func)
