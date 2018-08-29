@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from mycode.gui.BeanFactory import *
 from mycode.util.DrawUtil import *
+from mycode.util.WindowUtil import WindowUtil
 
 
 class MainPage(Frame):

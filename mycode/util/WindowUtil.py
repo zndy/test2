@@ -20,3 +20,13 @@ class WindowUtil:
         # and where it is placed
         window.geometry('%dx%d+%d+%d' % (w, h, x, y))
         return window
+
+    @staticmethod
+    def disableFrame(frame=Frame):
+        for child in frame.winfo_children():
+            child.configure(state='disabled')
+
+    @staticmethod
+    def enableFrame(frame=Frame):
+        for child in frame.winfo_children():
+            child.configure(state='normal')
