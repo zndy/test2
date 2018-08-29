@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from tkinter import *
+from tkinter import Label, Entry
 
 
 class WindowUtil:
@@ -30,3 +31,16 @@ class WindowUtil:
     def enableFrame(frame=Frame):
         for child in frame.winfo_children():
             child.configure(state='normal')
+
+    @staticmethod
+    def createPointInputEntry(frame, name, row, entryX, entryY):
+        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
+        Label(frame, text='x:').grid(row=row, column=1, columnspan=1)
+        Entry(frame, textvariable=entryX).grid(row=row, column=2, columnspan=1)
+        Label(frame, text='y:').grid(row=row, column=3, columnspan=1)
+        Entry(frame, textvariable=entryY).grid(row=row, column=4, columnspan=1)
+
+    @staticmethod
+    def createInputEntry(frame, name, row, entry):
+        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
+        Entry(frame, textvariable=entry).grid(row=row, column=1, columnspan=1)
