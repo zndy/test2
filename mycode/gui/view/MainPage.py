@@ -8,7 +8,10 @@ class MainPage(Frame):
     def __init__(self, window):
         self.window = window
 
-        self.convertButtonText = StringVar()
+        self.calcBtnIcon = PhotoImage(file="mycode/gui/icons/writing.png")
+        self.leftArrowIcon = PhotoImage(file="mycode/gui/icons/left-arrow.png")
+        self.rightArrowIcon = PhotoImage(file="mycode/gui/icons/right-arrow.png")
+
         self.diamondFrameSelectNr = IntVar()  # Nr 1: 3 values, Nr 2: 4 points
         self.threeValuesCanvasFrame = Frame
         self.threeValuesInputFrame = Frame
@@ -58,8 +61,7 @@ class MainPage(Frame):
 
         self.onClick()
 
-        self.icon = PhotoImage(file="mycode/gui/icons/writing.png")
-        self.calcButton = Button(image=self.icon)
+        self.calcButton = Button(image=self.calcBtnIcon)
         WindowUtil.setDefaultButtonStyle(self.calcButton)
         self.calcButton.place(x=810, y=650)
 
@@ -72,9 +74,9 @@ class MainPage(Frame):
         row += 1
         self.__createThreeValuesFrame(diamondScheibeFrame).grid(row=row, column=0)
 
-        self.convertBtn = Button(diamondScheibeFrame, textvariable=self.convertButtonText)
+        self.convertBtn = Button(diamondScheibeFrame)
         WindowUtil.setDefaultButtonStyle(self.convertBtn)
-        self.convertBtn.grid(row=row, column=1, padx=20)
+        self.convertBtn.grid(row=row, column=1, padx=30)
 
         self.__createFourPointsFrame(diamondScheibeFrame).grid(row=row, column=2)
 
@@ -190,11 +192,11 @@ class MainPage(Frame):
 
     def onClick(self):
         if self.diamondFrameSelectNr.get() == 1:
-            self.convertButtonText.set("==>")
+            self.convertBtn['image'] = self.rightArrowIcon
             WindowUtil.enableFrame(self.threeValuesInputFrame)
             WindowUtil.disableFrame(self.fourPointsInputFrame)
         elif self.diamondFrameSelectNr.get() == 2:
-            self.convertButtonText.set("<==")
+            self.convertBtn['image'] = self.leftArrowIcon
             WindowUtil.enableFrame(self.fourPointsInputFrame)
             WindowUtil.disableFrame(self.threeValuesInputFrame)
 
