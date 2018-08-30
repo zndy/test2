@@ -14,9 +14,9 @@ class MainPageModel:
         self.diamond_p3 = MyPoint(1.0, 0.0)
         self.diamond_p4 = MyPoint(3.0, -2.0)
 
-        self.diamond_beta = 45.0
-        self.diamond_d1 = 10.0
-        self.diamond_d2 = 20.0
+        self.diamond_beta = 90.0
+        self.diamond_d1 = 2.0
+        self.diamond_d2 = 6.0
 
         self.beginDistance = 1.0
         self.abricht_diameter = 40.0
