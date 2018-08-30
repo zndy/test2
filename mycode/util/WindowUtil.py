@@ -23,14 +23,16 @@ class WindowUtil:
         return window
 
     @staticmethod
-    def disableFrame(frame=Frame):
-        for child in frame.winfo_children():
-            child.configure(state='disabled')
+    def disableFrame(*frames: Frame):
+        for frame in frames:
+            for child in frame.winfo_children():
+                child.configure(state='disabled')
 
     @staticmethod
-    def enableFrame(frame=Frame):
-        for child in frame.winfo_children():
-            child.configure(state='normal')
+    def enableFrame(*frames: Frame):
+        for frame in frames:
+            for child in frame.winfo_children():
+                child.configure(state='normal')
 
     @staticmethod
     def createPointInputEntry(frame, name, row, entryX, entryY):

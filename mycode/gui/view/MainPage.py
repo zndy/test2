@@ -10,6 +10,10 @@ class MainPage(Frame):
 
         self.convertButtonText = StringVar()
         self.diamondFrameSelectNr = IntVar()  # Nr 1: 3 values, Nr 2: 4 points
+        self.threeValuesCanvasFrame = Frame
+        self.threeValuesInputFrame = Frame
+        self.fourPointsCanvasFrame = Frame
+        self.fourPointsInputFrame = Frame
 
         # abricht scheibe value
         self.abricht_p1x = DoubleVar()
@@ -79,9 +83,11 @@ class MainPage(Frame):
         threeValuesRadioBtn.select()
 
         # row += 1
-        self.__createFourPointCanvasFrame(threeValueFrame).grid(row=row, column=1)
+        self.threeValuesCanvasFrame = self.__createFourPointCanvasFrame(threeValueFrame)
+        self.threeValuesCanvasFrame.grid(row=row, column=1)
         row += 1
-        self.__createFourPointInputFrame(threeValueFrame).grid(row=row, column=0, columnspan=2)
+        self.threeValuesInputFrame = self.__createFourPointInputFrame(threeValueFrame)
+        self.threeValuesInputFrame.grid(row=row, column=0, columnspan=2)
         return threeValueFrame
 
     def __createFourPointFrame(self, master=Frame):
@@ -92,9 +98,11 @@ class MainPage(Frame):
                                          command=self.onClick)
         fourPointsRadioBtn.grid(row=row, column=0)
         # row += 1
-        self.__createFourPointCanvasFrame(fourPointFrame).grid(row=row, column=1)
+        self.fourPointsCanvasFrame = self.__createFourPointCanvasFrame(fourPointFrame)
+        self.fourPointsCanvasFrame.grid(row=row, column=1)
         row += 1
-        self.__createFourPointInputFrame(fourPointFrame).grid(row=row, column=0, columnspan=2)
+        self.fourPointsInputFrame = self.__createFourPointInputFrame(fourPointFrame)
+        self.fourPointsInputFrame.grid(row=row, column=0, columnspan=2)
         return fourPointFrame
 
     def __createFourPointCanvasFrame(self, master=Frame):
@@ -109,7 +117,6 @@ class MainPage(Frame):
         p4y = p5y = 40
         p5x = p6x = 200
         radius = 3
-        # canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Diamond Scheibe")
         canvas.create_polygon(p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, p5x, p5y, p6x, p6y, outline="black", fill="")
         DrawUtil.drawCicle(p1x, p1y, radius, canvas)
         canvas.create_text(p1x - 20, p1y, fill="darkblue", font="Times 10 italic bold", text="p1")
@@ -144,9 +151,12 @@ class MainPage(Frame):
     def onClick(self):
         if self.diamondFrameSelectNr.get() == 1:
             self.convertButtonText.set("==>")
+            WindowUtil.enableFrame(self.threeValuesInputFrame)
+            WindowUtil.disableFrame(self.fourPointsInputFrame)
         else:
             self.convertButtonText.set("<==")
-        print(self.diamondFrameSelectNr.get())
+            WindowUtil.enableFrame(self.fourPointsInputFrame)
+            WindowUtil.disableFrame(self.threeValuesInputFrame)
 
     def __createAbrichtScheibeFrame(self):
         abrichtScheibeFrame = Frame(self.window)
