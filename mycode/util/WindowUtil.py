@@ -47,6 +47,6 @@ class WindowUtil:
 
     @staticmethod
     def setDefaultButtonStyle(button=Button):
-        button['font'] = font.Font(family='Helvetica', size=12, weight='bold')
+        button['font'] = font.Font(family='Helvetica', size=14, weight='bold')
         button['bg'] = "yellow"
         button['fg'] = "red"
