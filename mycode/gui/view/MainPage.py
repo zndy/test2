@@ -37,15 +37,6 @@ class MainPage(Frame):
         self.diamond_diameter = DoubleVar()
 
         # Frames
-        # self.canvasFrame = Frame(self.window)
-        # self.__createCanvasFrame()
-        # self.canvasFrame.place(x=200, y=20)
-        #
-
-        # self.diamondScheibeFrame = Frame(self.window)
-        # self.__createDiamondScheibeFrame()
-        # self.diamondScheibeFrame.place(x=0, y=20)
-
         self.diamondScheibeFrame = self.__createDiamondScheibeFrame()
         self.diamondScheibeFrame.place(x=0, y=10)
 
@@ -54,11 +45,6 @@ class MainPage(Frame):
 
         self.paraFrame = self.__createParaFrame()
         self.paraFrame.place(x=550, y=450)
-
-        #
-        # self.paraFrame = Frame(self.window)
-        # self.__createParaFrame()
-        # self.paraFrame.place(x=450, y=250)
 
         self.onClick()
 
@@ -161,48 +147,6 @@ class MainPage(Frame):
         else:
             self.convertButtonText.set("<==")
         print(self.diamondFrameSelectNr.get())
-
-    def __drawDiamondScheibe(self):
-        canvas = Canvas(self.canvasFrame, width=200, height=200)
-        canvas.grid(row=0, column=1, columnspan=1)
-        p1x = p4x = 100
-        p1y = p6y = 120
-        p2x = p3x = 80
-        p2y = 100
-        p3y = 60
-        p4y = p5y = 40
-        p5x = p6x = 200
-        radius = 3
-        canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Diamond Scheibe")
-        canvas.create_polygon(p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, p5x, p5y, p6x, p6y, outline="black", fill="")
-        DrawUtil.drawCicle(p1x, p1y, radius, canvas)
-        canvas.create_text(p1x - 20, p1y, fill="darkblue", font="Times 10 italic bold", text="p1")
-        DrawUtil.drawCicle(p2x, p2y, radius, canvas)
-        canvas.create_text(p2x - 20, p2y, fill="darkblue", font="Times 10 italic bold", text="p2")
-        DrawUtil.drawCicle(p3x, p3y, radius, canvas)
-        canvas.create_text(p3x - 20, p3y, fill="darkblue", font="Times 10 italic bold", text="p3")
-        DrawUtil.drawCicle(p4x, p4y, radius, canvas)
-        canvas.create_text(p4x - 20, p4y, fill="darkblue", font="Times 10 italic bold", text="p4")
-
-        axisX = p2x
-        axisY = p3y + (p2y - p3y) / 2
-        DrawUtil.drawAxis(axisX, axisY, 51, "red", 270, canvas)
-
-    def ___createDiamondScheibeFrame(self):
-        row = 0
-        Label(self.diamondScheibeFrame, text='Diamond Scheibe: ').grid(row=row)
-        row += 1
-        WindowUtil.createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P1", row, self.diamond_p1x,
-                                         self.diamond_p1y)
-        row += 1
-        WindowUtil.createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P2", row, self.diamond_p2x,
-                                         self.diamond_p2y)
-        row += 1
-        WindowUtil.createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P3", row, self.diamond_p3x,
-                                         self.diamond_p3y)
-        row += 1
-        WindowUtil.createPointInputEntry(self.diamondScheibeFrame, "DiamondScheibe P4", row, self.diamond_p4x,
-                                         self.diamond_p4y)
 
     def __createAbrichtScheibeFrame(self):
         abrichtScheibeFrame = Frame(self.window)
