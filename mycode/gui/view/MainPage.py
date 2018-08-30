@@ -83,17 +83,41 @@ class MainPage(Frame):
         threeValuesRadioBtn.select()
 
         # row += 1
-        self.threeValuesCanvasFrame = self.__createFourPointsCanvasFrame(threeValuesFrame)
+        self.threeValuesCanvasFrame = self.__createThreeValuesCanvasFrame(threeValuesFrame)
         self.threeValuesCanvasFrame.grid(row=row, column=1)
         row += 1
         self.threeValuesInputFrame = self.__createFourPointsInputFrame(threeValuesFrame)
         self.threeValuesInputFrame.grid(row=row, column=0, columnspan=2)
         return threeValuesFrame
 
+    def __createThreeValuesCanvasFrame(self, master=Frame):
+        threeValuesCanvasFrame = Frame(master)
+        canvas = Canvas(threeValuesCanvasFrame, width=200, height=200)
+        canvas.grid(row=0, column=1, columnspan=1)
+        p1x = p4x = 100
+        p1y = p6y = 120
+        p2x = p3x = 80
+        p2y = 100
+        p3y = 60
+        p4y = p5y = 40
+        p5x = p6x = 200
+        p0x = 60
+        p0y = (p5y + p6y) / 2
+        radius = 3
+        canvas.create_polygon(p1x, p1y, p0x, p0y, p4x, p4y, p5x, p5y, p6x, p6y, outline="black", fill="")
+        canvas.create_line(p2x, p2y, p3x, p3y, fill="blue", dash=(1, 1))
+        canvas.create_text(p2x + 8, (p2y + p3y) / 2, fill="darkblue", text="d1")
+        canvas.create_line(p1x, p1y, p4x, p4y, fill="blue", dash=(1, 1))
+        canvas.create_text(p1x + 8, (p1y + p4y) / 2, fill="darkblue", text="d2")
+        canvas.create_text(p0x + 8, p0y, fill="darkblue", text="ß")
+
+        return threeValuesCanvasFrame
+
     def __createFourPointsFrame(self, master=Frame):
         fourPointsFrame = Frame(master)
         row = 0
-        fourPointsRadioBtn = Radiobutton(fourPointsFrame, text="Four Points Version", variable=self.diamondFrameSelectNr,
+        fourPointsRadioBtn = Radiobutton(fourPointsFrame, text="Four Points Version",
+                                         variable=self.diamondFrameSelectNr,
                                          value=2,
                                          command=self.onClick)
         fourPointsRadioBtn.grid(row=row, column=0)
