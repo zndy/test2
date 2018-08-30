@@ -52,6 +52,9 @@ class MainPage(Frame):
         self.abrichtScheibeFrame = self.__createAbrichtScheibeFrame()
         self.abrichtScheibeFrame.place(x=25, y=400)
 
+        self.paraFrame = self.__createParaFrame()
+        self.paraFrame.place(x=550, y=450)
+
         #
         # self.paraFrame = Frame(self.window)
         # self.__createParaFrame()
@@ -66,14 +69,15 @@ class MainPage(Frame):
     def __createDiamondScheibeFrame(self):
         diamondScheibeFrame = Frame(self.window)
         row = 0
-        Label(diamondScheibeFrame, text='Diamond Scheibe: (Bitte waehlen Sie gewuenscht input values variant)').grid(row=row, sticky=W)
+        Label(diamondScheibeFrame, text='Diamond Scheibe: (Bitte waehlen Sie gewuenscht input values variant)').grid(
+            row=row, sticky=W)
 
         row += 1
-
         self.__createThreeValueFrame(diamondScheibeFrame).grid(row=row, column=0)
+
         convertBtn = Button(diamondScheibeFrame, textvariable=self.convertButtonText)
         WindowUtil.setDefaultButtonStyle(convertBtn)
-        convertBtn.grid(row=row, column=1)
+        convertBtn.grid(row=row, column=1, padx=20)
 
         self.__createFourPointFrame(diamondScheibeFrame).grid(row=row, column=2)
 
@@ -85,13 +89,13 @@ class MainPage(Frame):
         threeValuesRadioBtn = Radiobutton(threeValueFrame, text="Three Values Version",
                                           variable=self.diamondFrameSelectNr, value=1,
                                           command=self.onClick)
-        threeValuesRadioBtn.grid(row=row)
+        threeValuesRadioBtn.grid(row=row, column=0)
         threeValuesRadioBtn.select()
 
+        # row += 1
+        self.__createFourPointCanvasFrame(threeValueFrame).grid(row=row, column=1)
         row += 1
-        self.__createFourPointCanvasFrame(threeValueFrame).grid(row=row, column=0)
-        row += 1
-        self.__createFourPointInputFrame(threeValueFrame).grid(row=row, column=0)
+        self.__createFourPointInputFrame(threeValueFrame).grid(row=row, column=0, columnspan=2)
         return threeValueFrame
 
     def __createFourPointFrame(self, master=Frame):
@@ -101,10 +105,10 @@ class MainPage(Frame):
                                          value=2,
                                          command=self.onClick)
         fourPointsRadioBtn.grid(row=row, column=0)
+        # row += 1
+        self.__createFourPointCanvasFrame(fourPointFrame).grid(row=row, column=1)
         row += 1
-        self.__createFourPointCanvasFrame(fourPointFrame).grid(row=row, column=0)
-        row += 1
-        self.__createFourPointInputFrame(fourPointFrame).grid(row=row, column=0)
+        self.__createFourPointInputFrame(fourPointFrame).grid(row=row, column=0, columnspan=2)
         return fourPointFrame
 
     def __createFourPointCanvasFrame(self, master=Frame):
@@ -233,8 +237,6 @@ class MainPage(Frame):
         inputFrame = Frame(master)
         inputFrame.pack(side=BOTTOM)
         row = 0
-        Label(inputFrame, text='Abricht Scheibe: ').grid(row=row)
-        row += 1
         WindowUtil.createPointInputEntry(inputFrame, "Abricht P1", row, self.abricht_p1x,
                                          self.abricht_p1y)
         row += 1
@@ -242,22 +244,24 @@ class MainPage(Frame):
                                          self.abricht_p2y)
 
     def __createParaFrame(self):
+        paraFrame = Frame(self.window)
         row = 0
-        Label(self.paraFrame, text='Parameters: ').grid(row=row)
+        Label(paraFrame, text='Parameters: ').grid(row=row)
         row += 1
-        WindowUtil.createInputEntry(self.paraFrame, "Anfang Abstand", row, self.beginDistance)
+        WindowUtil.createInputEntry(paraFrame, "Anfang Abstand", row, self.beginDistance)
         row += 1
-        WindowUtil.createInputEntry(self.paraFrame, "AbrichtScheibe Flansch", row, self.abricht_flansch)
+        WindowUtil.createInputEntry(paraFrame, "AbrichtScheibe Flansch", row, self.abricht_flansch)
         row += 1
-        WindowUtil.createInputEntry(self.paraFrame, "DiamondScheibe Flansch", row, self.diamond_flansch)
+        WindowUtil.createInputEntry(paraFrame, "DiamondScheibe Flansch", row, self.diamond_flansch)
         row += 1
-        WindowUtil.createInputEntry(self.paraFrame, "Delta X", row, self.deltax)
+        WindowUtil.createInputEntry(paraFrame, "Delta X", row, self.deltax)
         row += 1
-        WindowUtil.createInputEntry(self.paraFrame, "Delta Y", row, self.deltay)
+        WindowUtil.createInputEntry(paraFrame, "Delta Y", row, self.deltay)
         row += 1
-        WindowUtil.createInputEntry(self.paraFrame, "AbrichtScheibe Durchmesser", row, self.abricht_diameter)
+        WindowUtil.createInputEntry(paraFrame, "AbrichtScheibe Durchmesser", row, self.abricht_diameter)
         row += 1
-        WindowUtil.createInputEntry(self.paraFrame, "DiamondScheibe Durchmesser", row, self.diamond_diameter)
+        WindowUtil.createInputEntry(paraFrame, "DiamondScheibe Durchmesser", row, self.diamond_diameter)
+        return paraFrame
 
     def addCalcBtnListener(self, func):
         self.calcButton.bind("<ButtonRelease-1>", func)
