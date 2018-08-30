@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from tkinter import font
 from mycode.util.DrawUtil import *
 from mycode.util.WindowUtil import *
 
@@ -49,7 +50,7 @@ class MainPage(Frame):
         self.diamondScheibeFrame.place(x=0, y=20)
 
         self.abrichtScheibeFrame = self.__createAbrichtScheibeFrame()
-        self.abrichtScheibeFrame.place(x=25, y=250)
+        self.abrichtScheibeFrame.place(x=25, y=400)
 
         #
         # self.paraFrame = Frame(self.window)
@@ -58,16 +59,22 @@ class MainPage(Frame):
 
         self.onClick()
 
-        self.calcButton = Button(text="calc", bg="yellow", fg="red")
-        self.calcButton.place(x=750, y=450)
+        self.calcButton = Button(text="calc")
+        WindowUtil.setDefaultButtonStyle(self.calcButton)
+        self.calcButton.place(x=800, y=650)
 
     def __createDiamondScheibeFrame(self):
         diamondScheibeFrame = Frame(self.window)
         row = 0
-        Label(diamondScheibeFrame, text='Diamond Scheibe: ').grid(row=row)
+        Label(diamondScheibeFrame, text='Diamond Scheibe: ').grid(row=row, sticky=W)
+
         row += 1
         self.__createFourPointFrame(diamondScheibeFrame).grid(row=row, column=0)
-        Button(diamondScheibeFrame, textvariable=self.convertButtonText).grid(row=row, column=1)
+
+        convertBtn = Button(diamondScheibeFrame, textvariable=self.convertButtonText)
+        WindowUtil.setDefaultButtonStyle(convertBtn)
+        convertBtn.grid(row=row, column=1)
+
         self.__createThreeValueFrame(diamondScheibeFrame).grid(row=row, column=2)
 
         return diamondScheibeFrame
@@ -77,9 +84,59 @@ class MainPage(Frame):
         row = 0
         fourPointsRadioBtn = Radiobutton(fourPointFrame, text="Four Points Version", variable=self.selectNr, value=1,
                                          command=self.onClick)
-        fourPointsRadioBtn.grid(row=row)
+        fourPointsRadioBtn.grid(row=row, column=0)
         fourPointsRadioBtn.select()
+        row += 1
+        self.__createFourPointCanvasFrame(fourPointFrame).grid(row=row, column=0)
+        row += 1
+        self.__createFourPointInputFrame(fourPointFrame).grid(row=row, column=0)
         return fourPointFrame
+
+    def __createFourPointCanvasFrame(self, master=Frame):
+        fourPointCanvasFrame = Frame(master)
+        canvas = Canvas(fourPointCanvasFrame, width=200, height=200)
+        canvas.grid(row=0, column=1, columnspan=1)
+        p1x = p4x = 100
+        p1y = p6y = 120
+        p2x = p3x = 80
+        p2y = 100
+        p3y = 60
+        p4y = p5y = 40
+        p5x = p6x = 200
+        radius = 3
+        # canvas.create_text(50, 10, fill="darkblue", font="Times 10 italic bold", text="Diamond Scheibe")
+        canvas.create_polygon(p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, p5x, p5y, p6x, p6y, outline="black", fill="")
+        DrawUtil.drawCicle(p1x, p1y, radius, canvas)
+        canvas.create_text(p1x - 20, p1y, fill="darkblue", font="Times 10 italic bold", text="p1")
+        DrawUtil.drawCicle(p2x, p2y, radius, canvas)
+        canvas.create_text(p2x - 20, p2y, fill="darkblue", font="Times 10 italic bold", text="p2")
+        DrawUtil.drawCicle(p3x, p3y, radius, canvas)
+        canvas.create_text(p3x - 20, p3y, fill="darkblue", font="Times 10 italic bold", text="p3")
+        DrawUtil.drawCicle(p4x, p4y, radius, canvas)
+        canvas.create_text(p4x - 20, p4y, fill="darkblue", font="Times 10 italic bold", text="p4")
+
+        axisX = p2x
+        axisY = p3y + (p2y - p3y) / 2
+        DrawUtil.drawAxis(axisX, axisY, 51, "red", 270, canvas)
+        return fourPointCanvasFrame
+
+    def __createFourPointInputFrame(self, master=Frame):
+        fourPointInputFrame = Frame(master)
+        row = 0
+        Label(fourPointInputFrame, text='Diamond Scheibe: ').grid(row=row)
+        row += 1
+        WindowUtil.createPointInputEntry(fourPointInputFrame, "DiamondScheibe P1", row, self.diamond_p1x,
+                                         self.diamond_p1y)
+        row += 1
+        WindowUtil.createPointInputEntry(fourPointInputFrame, "DiamondScheibe P2", row, self.diamond_p2x,
+                                         self.diamond_p2y)
+        row += 1
+        WindowUtil.createPointInputEntry(fourPointInputFrame, "DiamondScheibe P3", row, self.diamond_p3x,
+                                         self.diamond_p3y)
+        row += 1
+        WindowUtil.createPointInputEntry(fourPointInputFrame, "DiamondScheibe P4", row, self.diamond_p4x,
+                                         self.diamond_p4y)
+        return fourPointInputFrame
 
     def __createThreeValueFrame(self, master=Frame):
         threeValueFrame = Frame(master)
@@ -87,6 +144,10 @@ class MainPage(Frame):
         threeValuesRadioBtn = Radiobutton(threeValueFrame, text="Three Values Version", variable=self.selectNr, value=2,
                                           command=self.onClick)
         threeValuesRadioBtn.grid(row=row)
+        row += 1
+        self.__createFourPointCanvasFrame(threeValueFrame).grid(row=row, column=0)
+        row += 1
+        self.__createFourPointInputFrame(threeValueFrame).grid(row=row, column=0)
         return threeValueFrame
 
     def onClick(self):

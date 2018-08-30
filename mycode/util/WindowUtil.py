@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from tkinter import *
-from tkinter import Label, Entry
+from tkinter import Label, Entry, font
 
 
 class WindowUtil:
@@ -44,3 +44,9 @@ class WindowUtil:
     def createInputEntry(frame, name, row, entry):
         Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
         Entry(frame, textvariable=entry).grid(row=row, column=1, columnspan=1)
+
+    @staticmethod
+    def setDefaultButtonStyle(button=Button):
+        button['font'] = font.Font(family='Helvetica', size=12, weight='bold')
+        button['bg'] = "yellow"
+        button['fg'] = "red"
