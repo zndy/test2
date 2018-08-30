@@ -37,14 +37,19 @@ class MainPageModel:
 
     def convertFourPointsToThreeValues(self):
         line12 = Line(self.diamond_p1.toSympyPoint(), self.diamond_p2.toSympyPoint())
-        line34 = Line(self.diamond_p3.toSympyPoint(), self.diamond_p4.toSympyPoint())
-        self.diamond_beta = N(deg(line12.angle_between(line34)))
+        line43 = Line(self.diamond_p4.toSympyPoint(), self.diamond_p3.toSympyPoint())
+        self.diamond_beta = N(deg(line12.angle_between(line43)))
 
         self.diamond_d1 = CalcUtil.calcDistanceBetween(self.diamond_p2, self.diamond_p3)
         self.diamond_d2 = CalcUtil.calcDistanceBetween(self.diamond_p1, self.diamond_p4)
 
     def convertThreeValuesToFourPoints(self):
-        pass
+        abstandBetweenBalk = ((self.diamond_d2 - self.diamond_d1) / 2 / tan(rad(self.diamond_beta) / 2)).evalf()
+
+        self.diamond_p1.setXY(-1 * self.diamond_d2 / 2, -1 * abstandBetweenBalk)
+        self.diamond_p2.setXY(-1 * self.diamond_d1 / 2, 0)
+        self.diamond_p3.setXY(self.diamond_d1 / 2, 0)
+        self.diamond_p4.setXY(self.diamond_d2 / 2, -1 * abstandBetweenBalk)
 
     def calcAbrichtAngleDeg(self):
         line12 = Line(self.diamond_p1.toSympyPoint(), self.diamond_p2.toSympyPoint())

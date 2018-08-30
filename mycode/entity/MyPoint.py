@@ -11,6 +11,10 @@ class MyPoint:
     def __str__(self):
         return "MyPoint(" + str(self.__x) + ", " + str(self.__y) + ")"
 
+    def setXY(self, x, y):
+        self.__x = x
+        self.__y = y
+
     def getX(self):
         return self.__x
 
