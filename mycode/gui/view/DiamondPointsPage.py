@@ -6,6 +6,8 @@ class DiamondPointsPage(Frame):
     def __init__(self, window):
         self.window = window
 
+        self.padding = 15
+
         self.abrichtScheibeWidth = DoubleVar()
         self.abrichtAngle = DoubleVar()
 
@@ -29,15 +31,15 @@ class DiamondPointsPage(Frame):
 
         self.row = 0
         self.abrichtScheibeFrame = self.__createAbrichtenScheibeFrame()
-        self.abrichtScheibeFrame.grid(row=self.row, column=0, columnspan=2, pady=15)
+        self.abrichtScheibeFrame.grid(row=self.row, column=0, columnspan=2, pady=self.padding)
 
         self.row += 1
         self.diamondPointFrame = self.__createDiamondPointFrame()
-        self.diamondPointFrame.grid(row=self.row, column=0, columnspan=5,pady=15)
+        self.diamondPointFrame.grid(row=self.row, column=0, columnspan=5, pady=self.padding)
 
         self.row += 1
         self.resultFrame = self.__createResultFrame()
-        self.resultFrame.grid(row=self.row, column=0, columnspan=2, sticky=W,pady=15)
+        self.resultFrame.grid(row=self.row, column=0, columnspan=2, sticky=W, pady=self.padding)
 
     def __createAbrichtenScheibeFrame(self):
         abrichtScheibeFrame = Frame(self.window)
@@ -78,10 +80,10 @@ class DiamondPointsPage(Frame):
         return resultFrame
 
     def __createPointResultEntry(self, frame, name, row, entryX, entryY):
-        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1, sticky=W)
+        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1, padx=(0, self.padding), sticky=W)
         Label(frame, text='x:').grid(row=row, column=1, columnspan=1, sticky=W)
         Label(frame, textvariable=entryX).grid(row=row, column=2, columnspan=1, sticky=W)
-        Label(frame, text='y:').grid(row=row, column=3, columnspan=1, sticky=W)
+        Label(frame, text='y:').grid(row=row, column=3, columnspan=1, padx=(self.padding, 0), sticky=W)
         Label(frame, textvariable=entryY).grid(row=row, column=4, columnspan=1, sticky=W)
 
     def __createResultEntry(self, frame, name, row, entry):
