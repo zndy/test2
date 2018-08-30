@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from tkinter import font
 from mycode.util.DrawUtil import *
 from mycode.util.WindowUtil import *
 
@@ -14,6 +13,7 @@ class MainPage(Frame):
         self.threeValuesInputFrame = Frame
         self.fourPointsCanvasFrame = Frame
         self.fourPointsInputFrame = Frame
+        self.convertBtn = Button
 
         # diamond scheibe three values
         self.diamond_beta = DoubleVar()
@@ -59,20 +59,20 @@ class MainPage(Frame):
 
         self.calcButton = Button(text="calc")
         WindowUtil.setDefaultButtonStyle(self.calcButton)
-        self.calcButton.place(x=800, y=650)
+        self.calcButton.place(x=790, y=650)
 
     def __createDiamondScheibeFrame(self):
         diamondScheibeFrame = Frame(self.window)
         row = 0
-        Label(diamondScheibeFrame, text='Diamond Scheibe: (Bitte waehlen Sie gewuenscht input values variant)').grid(
+        Label(diamondScheibeFrame, text='Diamond Scheibe: (Bitte waehlen Sie eine gewuenschte Variation)').grid(
             row=row, sticky=W)
 
         row += 1
         self.__createThreeValuesFrame(diamondScheibeFrame).grid(row=row, column=0)
 
-        convertBtn = Button(diamondScheibeFrame, textvariable=self.convertButtonText)
-        WindowUtil.setDefaultButtonStyle(convertBtn)
-        convertBtn.grid(row=row, column=1, padx=20)
+        self.convertBtn = Button(diamondScheibeFrame, textvariable=self.convertButtonText)
+        WindowUtil.setDefaultButtonStyle(self.convertBtn)
+        self.convertBtn.grid(row=row, column=1, padx=20)
 
         self.__createFourPointsFrame(diamondScheibeFrame).grid(row=row, column=2)
 
@@ -191,7 +191,7 @@ class MainPage(Frame):
             self.convertButtonText.set("==>")
             WindowUtil.enableFrame(self.threeValuesInputFrame)
             WindowUtil.disableFrame(self.fourPointsInputFrame)
-        else:
+        elif self.diamondFrameSelectNr.get() == 2:
             self.convertButtonText.set("<==")
             WindowUtil.enableFrame(self.fourPointsInputFrame)
             WindowUtil.disableFrame(self.threeValuesInputFrame)
@@ -255,5 +255,8 @@ class MainPage(Frame):
         WindowUtil.createInputEntry(paraFrame, "DiamondScheibe Durchmesser", row, self.diamond_diameter)
         return paraFrame
 
-    def addCalcBtnListener(self, func):
+    def addCalcBtnActionListener(self, func):
         self.calcButton.bind("<ButtonRelease-1>", func)
+
+    def addConvertBtnActionListener(self, func):
+        self.convertBtn.bind("<ButtonRelease-1>", func)

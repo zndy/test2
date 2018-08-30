@@ -17,14 +17,24 @@ class MainPageController:
         WindowUtil.setWindowAttributes("Abrichten Page", 900, 700, self.window)
         self.mainPage = MainPage(self.window)
         self.refreshViewFromModel()
-        self.mainPage.addCalcBtnListener(self.calcBtnPressed)
+        self.mainPage.addCalcBtnActionListener(self.calcBtnPressed)
+        self.mainPage.addConvertBtnActionListener(self.convertBtnPressed)
         self.window.mainloop()
 
     def calcBtnPressed(self, event):
         self.saveViewDataToModel()
+        self.convertDiamondParametersAndShow()
         self.updateDiamondPointsPageModel()
         self.calcResult()
         self.openDiamondPage()
+
+    def convertBtnPressed(self, event):
+        self.saveViewDataToModel()
+        self.convertDiamondParametersAndShow()
+
+    def convertDiamondParametersAndShow(self):
+        self.mainPageModel.convertDiamondParameters()
+        self.refreshViewFromModel()
 
     def refreshViewFromModel(self):
         # abricht scheibe value
@@ -33,7 +43,12 @@ class MainPageController:
         self.mainPage.abricht_p2x.set(self.mainPageModel.abricht_p2.getX())
         self.mainPage.abricht_p2y.set(self.mainPageModel.abricht_p2.getY())
 
-        # diamond scheibe value
+        # diamond three values
+        self.mainPage.diamond_beta.set(self.mainPageModel.diamond_beta)
+        self.mainPage.diamond_d1.set(self.mainPageModel.diamond_d1)
+        self.mainPage.diamond_d2.set(self.mainPageModel.diamond_d2)
+
+        # diamond four points
         self.mainPage.diamond_p1x.set(self.mainPageModel.diamond_p1.getX())
         self.mainPage.diamond_p1y.set(self.mainPageModel.diamond_p1.getY())
         self.mainPage.diamond_p2x.set(self.mainPageModel.diamond_p2.getX())
@@ -53,10 +68,14 @@ class MainPageController:
         self.mainPage.diamond_diameter.set(self.mainPageModel.diamond_diameter)
 
     def saveViewDataToModel(self):
-        self.mainPageModel.abricht_p1.setX(self.mainPage.abricht_p1x.get())
-        self.mainPageModel.abricht_p1.setY(self.mainPage.abricht_p1y.get())
-        self.mainPageModel.abricht_p2.setX(self.mainPage.abricht_p2x.get())
-        self.mainPageModel.abricht_p2.setY(self.mainPage.abricht_p2y.get())
+        self.mainPageModel.inputVariationNr = self.mainPage.diamondFrameSelectNr.get()
+
+        # diamond three values
+        self.mainPageModel.diamond_beta = self.mainPage.diamond_beta.get()
+        self.mainPageModel.diamond_d1 = self.mainPage.diamond_d1.get()
+        self.mainPageModel.diamond_d2 = self.mainPage.diamond_d2.get()
+
+        # diamond four points
         self.mainPageModel.diamond_p1.setX(self.mainPage.diamond_p1x.get())
         self.mainPageModel.diamond_p1.setY(self.mainPage.diamond_p1y.get())
         self.mainPageModel.diamond_p2.setX(self.mainPage.diamond_p2x.get())
@@ -65,6 +84,12 @@ class MainPageController:
         self.mainPageModel.diamond_p3.setY(self.mainPage.diamond_p3y.get())
         self.mainPageModel.diamond_p4.setX(self.mainPage.diamond_p4x.get())
         self.mainPageModel.diamond_p4.setY(self.mainPage.diamond_p4y.get())
+
+        # abricht scheibe
+        self.mainPageModel.abricht_p1.setX(self.mainPage.abricht_p1x.get())
+        self.mainPageModel.abricht_p1.setY(self.mainPage.abricht_p1y.get())
+        self.mainPageModel.abricht_p2.setX(self.mainPage.abricht_p2x.get())
+        self.mainPageModel.abricht_p2.setY(self.mainPage.abricht_p2y.get())
 
         # parameters
         self.mainPageModel.beginDistance = self.mainPage.beginDistance.get()
