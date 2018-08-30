@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from mycode.util.DrawUtil import *
 from mycode.util.WindowUtil import *
+from mycode.gui.icons import *
 
 
 class MainPage(Frame):
@@ -57,9 +58,10 @@ class MainPage(Frame):
 
         self.onClick()
 
-        self.calcButton = Button(text="calc")
+        self.icon = PhotoImage(file="mycode/gui/icons/writing.png")
+        self.calcButton = Button(image=self.icon)
         WindowUtil.setDefaultButtonStyle(self.calcButton)
-        self.calcButton.place(x=790, y=650)
+        self.calcButton.place(x=810, y=650)
 
     def __createDiamondScheibeFrame(self):
         diamondScheibeFrame = Frame(self.window)
