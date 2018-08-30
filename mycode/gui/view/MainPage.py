@@ -15,13 +15,12 @@ class MainPage(Frame):
         self.fourPointsCanvasFrame = Frame
         self.fourPointsInputFrame = Frame
 
-        # abricht scheibe value
-        self.abricht_p1x = DoubleVar()
-        self.abricht_p1y = DoubleVar()
-        self.abricht_p2x = DoubleVar()
-        self.abricht_p2y = DoubleVar()
+        # diamond scheibe three values
+        self.diamond_beta = DoubleVar()
+        self.diamond_d1 = DoubleVar()
+        self.diamond_d2 = DoubleVar()
 
-        # diamond scheibe value
+        # diamond scheibe four Points
         self.diamond_p1x = DoubleVar()
         self.diamond_p1y = DoubleVar()
         self.diamond_p2x = DoubleVar()
@@ -30,6 +29,12 @@ class MainPage(Frame):
         self.diamond_p3y = DoubleVar()
         self.diamond_p4x = DoubleVar()
         self.diamond_p4y = DoubleVar()
+
+        # abricht scheibe value
+        self.abricht_p1x = DoubleVar()
+        self.abricht_p1y = DoubleVar()
+        self.abricht_p2x = DoubleVar()
+        self.abricht_p2y = DoubleVar()
 
         # paras
         self.beginDistance = DoubleVar()
@@ -86,8 +91,8 @@ class MainPage(Frame):
         self.threeValuesCanvasFrame = self.__createThreeValuesCanvasFrame(threeValuesFrame)
         self.threeValuesCanvasFrame.grid(row=row, column=1)
         row += 1
-        self.threeValuesInputFrame = self.__createFourPointsInputFrame(threeValuesFrame)
-        self.threeValuesInputFrame.grid(row=row, column=0, columnspan=2)
+        self.threeValuesInputFrame = self.__createThreeValuesInputFrame(threeValuesFrame)
+        self.threeValuesInputFrame.grid(row=row, column=0, columnspan=2, sticky=W)
         return threeValuesFrame
 
     def __createThreeValuesCanvasFrame(self, master=Frame):
@@ -110,8 +115,17 @@ class MainPage(Frame):
         canvas.create_line(p1x, p1y, p4x, p4y, fill="blue", dash=(1, 1))
         canvas.create_text(p1x + 8, (p1y + p4y) / 2, fill="darkblue", text="d2")
         canvas.create_text(p0x + 8, p0y, fill="darkblue", text="ß")
-
         return threeValuesCanvasFrame
+
+    def __createThreeValuesInputFrame(self, master=Frame):
+        threeValuesInputFrame = Frame(master)
+        row = 0
+        WindowUtil.createInputEntry(threeValuesInputFrame, "DiamondScheibe ß", row, self.diamond_beta)
+        row += 1
+        WindowUtil.createInputEntry(threeValuesInputFrame, "DiamondScheibe d1", row, self.diamond_d1)
+        row += 1
+        WindowUtil.createInputEntry(threeValuesInputFrame, "DiamondScheibe d2", row, self.diamond_d2)
+        return threeValuesInputFrame
 
     def __createFourPointsFrame(self, master=Frame):
         fourPointsFrame = Frame(master)
