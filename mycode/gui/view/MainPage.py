@@ -72,13 +72,13 @@ class MainPage(Frame):
             row=row, sticky=W)
 
         row += 1
-        self.__createThreeValuesFrame(diamondScheibeFrame).grid(row=row, column=0)
+        self.__createThreeValuesFrame(diamondScheibeFrame).grid(row=row, column=0, sticky=W)
 
         self.convertBtn = Button(diamondScheibeFrame)
         WindowUtil.setDefaultButtonStyle(self.convertBtn)
         self.convertBtn.grid(row=row, column=1, padx=30)
 
-        self.__createFourPointsFrame(diamondScheibeFrame).grid(row=row, column=2)
+        self.__createFourPointsFrame(diamondScheibeFrame).grid(row=row, column=2, sticky=W)
 
         return diamondScheibeFrame
 
@@ -88,7 +88,7 @@ class MainPage(Frame):
         threeValuesRadioBtn = Radiobutton(threeValuesFrame, text="Three Values Version",
                                           variable=self.diamondFrameSelectNr, value=1,
                                           command=self.onClick)
-        threeValuesRadioBtn.grid(row=row, column=0)
+        threeValuesRadioBtn.grid(row=row, column=0, sticky=W)
         threeValuesRadioBtn.select()
 
         # row += 1
@@ -138,10 +138,10 @@ class MainPage(Frame):
                                          variable=self.diamondFrameSelectNr,
                                          value=2,
                                          command=self.onClick)
-        fourPointsRadioBtn.grid(row=row, column=0)
+        fourPointsRadioBtn.grid(row=row, column=0, sticky=W)
         # row += 1
         self.fourPointsCanvasFrame = self.__createFourPointsCanvasFrame(fourPointsFrame)
-        self.fourPointsCanvasFrame.grid(row=row, column=1)
+        self.fourPointsCanvasFrame.grid(row=row, column=1, sticky=W)
         row += 1
         self.fourPointsInputFrame = self.__createFourPointsInputFrame(fourPointsFrame)
         self.fourPointsInputFrame.grid(row=row, column=0, columnspan=2)
