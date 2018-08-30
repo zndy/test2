@@ -6,6 +6,10 @@ from mycode.util.WindowUtil import *
 class MainPage(Frame):
     def __init__(self, window):
         self.window = window
+
+        self.convertButtonText = StringVar()
+        self.selectNr = IntVar()
+
         # abricht scheibe value
         self.abricht_p1x = DoubleVar()
         self.abricht_p1y = DoubleVar()
@@ -41,15 +45,56 @@ class MainPage(Frame):
         # self.__createDiamondScheibeFrame()
         # self.diamondScheibeFrame.place(x=0, y=20)
 
+        self.diamondScheibeFrame = self.__createDiamondScheibeFrame()
+        self.diamondScheibeFrame.place(x=0, y=20)
+
         self.abrichtScheibeFrame = self.__createAbrichtScheibeFrame()
         self.abrichtScheibeFrame.place(x=25, y=250)
+
         #
         # self.paraFrame = Frame(self.window)
         # self.__createParaFrame()
         # self.paraFrame.place(x=450, y=250)
 
+        self.onClick()
+
         self.calcButton = Button(text="calc", bg="yellow", fg="red")
         self.calcButton.place(x=750, y=450)
+
+    def __createDiamondScheibeFrame(self):
+        diamondScheibeFrame = Frame(self.window)
+        row = 0
+        Label(diamondScheibeFrame, text='Diamond Scheibe: ').grid(row=row)
+        row += 1
+        self.__createFourPointFrame(diamondScheibeFrame).grid(row=row, column=0)
+        Button(diamondScheibeFrame, textvariable=self.convertButtonText).grid(row=row, column=1)
+        self.__createThreeValueFrame(diamondScheibeFrame).grid(row=row, column=2)
+
+        return diamondScheibeFrame
+
+    def __createFourPointFrame(self, master=Frame):
+        fourPointFrame = Frame(master)
+        row = 0
+        fourPointsRadioBtn = Radiobutton(fourPointFrame, text="Four Points Version", variable=self.selectNr, value=1,
+                                         command=self.onClick)
+        fourPointsRadioBtn.grid(row=row)
+        fourPointsRadioBtn.select()
+        return fourPointFrame
+
+    def __createThreeValueFrame(self, master=Frame):
+        threeValueFrame = Frame(master)
+        row = 0
+        threeValuesRadioBtn = Radiobutton(threeValueFrame, text="Three Values Version", variable=self.selectNr, value=2,
+                                          command=self.onClick)
+        threeValuesRadioBtn.grid(row=row)
+        return threeValueFrame
+
+    def onClick(self):
+        if self.selectNr.get() == 1:
+            self.convertButtonText.set("==>")
+        else:
+            self.convertButtonText.set("<==")
+        print(self.selectNr.get())
 
     def __drawDiamondScheibe(self):
         canvas = Canvas(self.canvasFrame, width=200, height=200)
@@ -77,7 +122,7 @@ class MainPage(Frame):
         axisY = p3y + (p2y - p3y) / 2
         DrawUtil.drawAxis(axisX, axisY, 51, "red", 270, canvas)
 
-    def __createDiamondScheibeFrame(self):
+    def ___createDiamondScheibeFrame(self):
         row = 0
         Label(self.diamondScheibeFrame, text='Diamond Scheibe: ').grid(row=row)
         row += 1
