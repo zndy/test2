@@ -34,7 +34,7 @@ class WindowUtil:
 
     @staticmethod
     def createPointInputEntry(frame, name, row, entryX, entryY):
-        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
+        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1, sticky=W)
         Label(frame, text='x:').grid(row=row, column=1, columnspan=1)
         Entry(frame, textvariable=entryX).grid(row=row, column=2, columnspan=1)
         Label(frame, text='y:').grid(row=row, column=3, columnspan=1)
@@ -42,8 +42,8 @@ class WindowUtil:
 
     @staticmethod
     def createInputEntry(frame, name, row, entry):
-        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1)
-        Entry(frame, textvariable=entry).grid(row=row, column=1, columnspan=1)
+        Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1, sticky=W)
+        Entry(frame, textvariable=entry).grid(row=row, column=1, columnspan=1, sticky=E)
 
     @staticmethod
     def setDefaultButtonStyle(button=Button):

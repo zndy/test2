@@ -38,10 +38,10 @@ class MainPage(Frame):
 
         # Frames
         self.diamondScheibeFrame = self.__createDiamondScheibeFrame()
-        self.diamondScheibeFrame.place(x=0, y=10)
+        self.diamondScheibeFrame.place(x=10, y=10)
 
         self.abrichtScheibeFrame = self.__createAbrichtScheibeFrame()
-        self.abrichtScheibeFrame.place(x=25, y=400)
+        self.abrichtScheibeFrame.place(x=10, y=400)
 
         self.paraFrame = self.__createParaFrame()
         self.paraFrame.place(x=550, y=450)
@@ -190,7 +190,7 @@ class MainPage(Frame):
     def __createParaFrame(self):
         paraFrame = Frame(self.window)
         row = 0
-        Label(paraFrame, text='Parameters: ').grid(row=row)
+        Label(paraFrame, text='Parameters: ').grid(row=row, sticky=W)
         row += 1
         WindowUtil.createInputEntry(paraFrame, "Anfang Abstand", row, self.beginDistance)
         row += 1
