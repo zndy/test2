@@ -6,6 +6,7 @@ from mycode.gui.AbrichtPositionCalculator import *
 
 
 class MainPageController:
+
     def __init__(self):
         self.window = Tk
         self.mainPageModel = beanFactory.mainPageModel
@@ -19,6 +20,7 @@ class MainPageController:
         self.refreshViewFromModel()
         self.mainPage.addCalcBtnActionListener(self.calcBtnPressed)
         self.mainPage.addConvertBtnActionListener(self.convertBtnPressed)
+        self.window.iconbitmap("mycode/gui/icons/record.ico")
         self.window.mainloop()
 
     def calcBtnPressed(self, event):
