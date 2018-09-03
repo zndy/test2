@@ -20,7 +20,7 @@ class MainPageController:
         self.refreshViewFromModel()
         self.mainPage.addCalcBtnActionListener(self.calcBtnPressed)
         self.mainPage.addConvertBtnActionListener(self.convertBtnPressed)
-        self.window.iconbitmap("mycode/gui/icons/record.ico")
+        self.window.iconbitmap(beanFactory.IconPath.APPLICATION_ICON)
         self.window.mainloop()
 
     def calcBtnPressed(self, event):
