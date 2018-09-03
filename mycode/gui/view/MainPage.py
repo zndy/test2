@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 from mycode.util.DrawUtil import *
 from mycode.util.WindowUtil import *
-from mycode.gui.BeanFactory import *
-from mycode.gui.icons import *
+from mycode.gui.icons.icon_path import *
 
 
 class MainPage(Frame):
     def __init__(self, window):
         self.window = window
 
-        self.calcBtnIcon = PhotoImage(file=beanFactory.IconPath.CALC_ICON)
-        self.leftArrowIcon = PhotoImage(file=beanFactory.IconPath.LEFT_ARROW)
-        self.rightArrowIcon = PhotoImage(file=beanFactory.IconPath.RIGHT_ARROW)
+        self.calcBtnIcon = PhotoImage(file=IconPath.CALC_ICON)
+        self.leftArrowIcon = PhotoImage(file=IconPath.LEFT_ARROW)
+        self.rightArrowIcon = PhotoImage(file=IconPath.RIGHT_ARROW)
 
         self.diamondFrameSelectNr = IntVar()  # Nr 1: 3 values, Nr 2: 4 points
         self.threeValuesCanvasFrame = Frame
