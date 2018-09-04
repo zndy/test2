@@ -29,6 +29,7 @@ class MainPageController:
         self.convertDiamondParametersAndShow()
         self.updateDiamondPointsPageModel()
         self.calcResult()
+        self.generateIso()
         self.openDiamondPage()
 
     def convertBtnPressed(self, event):
@@ -136,6 +137,9 @@ class MainPageController:
 
         self.diamondPointsPageModel.xResult = xResult.subs(parameters).evalf()
         self.diamondPointsPageModel.yResult = yResult.subs(parameters).evalf()
+
+    def generateIso(self):
+        pass
 
     def openDiamondPage(self):
         DiamondPointsPageController(self.window).openDiamondPage()

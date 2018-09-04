@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from tkinter import *
+from mycode.util.WindowUtil import *
 
 
 class DiamondPointsPage(Frame):
@@ -29,6 +30,12 @@ class DiamondPointsPage(Frame):
         self.xResult = StringVar()
         self.yResult = StringVar()
 
+        self.isoText = Text
+
+        # callback example
+        # self.isoStr = StringVar()
+        # self.isoStr.trace("w", self.updateIsoFrame)
+
         self.row = 0
         self.abrichtScheibeFrame = self.__createAbrichtenScheibeFrame()
         self.abrichtScheibeFrame.grid(row=self.row, column=0, columnspan=2, pady=self.padding)
@@ -40,6 +47,10 @@ class DiamondPointsPage(Frame):
         self.row += 1
         self.resultFrame = self.__createResultFrame()
         self.resultFrame.grid(row=self.row, column=0, columnspan=2, sticky=W, pady=self.padding)
+
+        self.row += 1
+        self.isoFrame = self.__createIsoFrame()
+        self.isoFrame.grid(row=self.row, column=0, columnspan=11, sticky=W, pady=self.padding)
 
     def __createAbrichtenScheibeFrame(self):
         abrichtScheibeFrame = Frame(self.window)
@@ -79,6 +90,16 @@ class DiamondPointsPage(Frame):
         self.__createResultEntry(resultFrame, "y", row, self.yResult)
         return resultFrame
 
+    def __createIsoFrame(self):
+        isoFrame = Frame(self.window)
+        row = 0
+        Label(isoFrame, text='ISO: ').grid(row=row, column=0, sticky=W)
+        row += 1
+        self.isoText = Text(isoFrame)
+        self.isoText.grid(row=row, column=0, sticky=W)
+        WindowUtil.disableFrame(isoFrame)
+        return isoFrame
+
     def __createPointResultEntry(self, frame, name, row, entryX, entryY):
         Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1, padx=(0, self.padding), sticky=W)
         Label(frame, text='x:').grid(row=row, column=1, columnspan=1, sticky=W)
@@ -89,3 +110,8 @@ class DiamondPointsPage(Frame):
     def __createResultEntry(self, frame, name, row, entry):
         Label(frame, text=name + ": ").grid(row=row, column=0, columnspan=1, sticky=W)
         Label(frame, textvariable=entry).grid(row=row, column=1, columnspan=1, sticky=W)
+
+    def updateIsoFrame(self, *args):
+        WindowUtil.enableFrame(self.isoFrame)
+        self.isoText.insert(INSERT, self.isoStr.get())
+        WindowUtil.disableFrame(self.isoFrame)
