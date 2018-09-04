@@ -20,8 +20,8 @@ from mycode.gui.BeanFactory import *
 class AbrichtenPositionCalculator:
 
     def __init__(self):
-        self.mainPageModel = beanFactory.mainPageModel
-        self.diamondPointsPageModel = beanFactory.diamondPointsPageModel
+        self.mainPageModel = BeanFactory.getInstance().mainPageModel
+        self.diamondPointsPageModel = BeanFactory.getInstance().diamondPointsPageModel
         self.x, self.y, self.v, self.a_d, self.a_f, self.d_d, self.d_f, self.dx, self.dy, self.px, self.py = symbols(
             'x y v a_d a_f d_d d_f dx dy px py')
 
