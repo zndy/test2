@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from mycode.gui.IsoGenerator import *
 from mycode.gui.view.MainPage import *
 from mycode.gui.controller.DiamondPointsPageController import *
 from mycode.util.WindowUtil import *
@@ -139,7 +140,10 @@ class MainPageController:
         self.diamondPointsPageModel.yResult = yResult.subs(parameters).evalf()
 
     def generateIso(self):
-        result = "gnerate iso"
+        points = [self.diamondPointsPageModel.diamondPointA1, self.diamondPointsPageModel.diamondPointA2,
+                  self.diamondPointsPageModel.diamondPointB1, self.diamondPointsPageModel.diamondPointB2,
+                  self.diamondPointsPageModel.diamondPointC1, self.diamondPointsPageModel.diamondPointC2]
+        result = IsoGenerator.generate(self.diamondPointsPageModel.xResult, self.diamondPointsPageModel.yResult, points)
         self.diamondPointsPageModel.iso = result
 
     def openDiamondPage(self):

@@ -23,13 +23,13 @@ class WindowUtil:
         return window
 
     @staticmethod
-    def disableFrame(*frames: Frame):
+    def disableFrame(*frames):
         for frame in frames:
             for child in frame.winfo_children():
                 child.configure(state='disabled')
 
     @staticmethod
-    def enableFrame(*frames: Frame):
+    def enableFrame(*frames):
         for frame in frames:
             for child in frame.winfo_children():
                 child.configure(state='normal')

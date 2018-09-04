@@ -41,7 +41,7 @@ class AbrichtenPositionCalculator:
         right = cls.__calcRight()
         print("right: " + str(right))
         result = solve([left[0] - right[0], left[1] - right[1]], [cls.x, cls.y])
-        print(result)
+        print("result: " + str(result))
         return result
 
 
