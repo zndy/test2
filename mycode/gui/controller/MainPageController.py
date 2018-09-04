@@ -118,8 +118,8 @@ class MainPageController:
     def calcResult(self):
         calculator = AbrichtenPositionCalculator()
         result = calculator.calc()
-        xResult = result.get(calculator.x)
-        yResult = result.get(calculator.y)
+        xResult = result.get(AbrichtenPositionCalculator.x)
+        yResult = result.get(AbrichtenPositionCalculator.y)
 
         parameters = {}
         parameters[calculator.v] = self.diamondPointsPageModel.abrichtAngleDeg
