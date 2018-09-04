@@ -139,7 +139,8 @@ class MainPageController:
         self.diamondPointsPageModel.yResult = yResult.subs(parameters).evalf()
 
     def generateIso(self):
-        pass
+        result = "gnerate iso"
+        self.diamondPointsPageModel.iso = result
 
     def openDiamondPage(self):
         DiamondPointsPageController(self.window).openDiamondPage()
