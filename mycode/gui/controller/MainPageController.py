@@ -3,7 +3,7 @@ from mycode.gui.view.MainPage import *
 from mycode.gui.controller.DiamondPointsPageController import *
 from mycode.util.WindowUtil import *
 from mycode.gui.AbrichtPositionCalculator import *
-from mycode.gui.icons.icon_path import *
+from mycode.gui.icons.IconPath import *
 
 
 class MainPageController:

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from mycode.util.DrawUtil import *
 from mycode.util.WindowUtil import *
-from mycode.gui.icons.icon_path import *
+from mycode.gui.icons.IconPath import *
 
 
 class MainPage(Frame):
