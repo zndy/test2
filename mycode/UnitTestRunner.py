@@ -1,7 +1,7 @@
 import unittest
 
 
-class MyTestRunner:
+class UnitTestRunner:
 
     def __init__(self):
         self.suite = unittest.TestSuite()
@@ -14,4 +14,4 @@ class MyTestRunner:
 
 
 if __name__ == "__main__":
-    MyTestRunner().run()
+    UnitTestRunner().run()
