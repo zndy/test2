@@ -92,10 +92,11 @@ class DiamondPointsPage(Frame):
     def __createIsoFrame(self):
         isoFrame = Frame(self.window)
         row = 0
-        Label(isoFrame, text='ISO: ').grid(row=row, column=0, sticky=W)
+        Label(isoFrame, text='ISO: (copy text with right mouse click)').grid(row=row, column=0, sticky=W)
         row += 1
-        self.isoText = Text(isoFrame)
+        self.isoText = Text(isoFrame, height=20, width=80)
         self.isoText.grid(row=row, column=0, sticky=W)
+        self.isoText.bind("<Button-3>", WindowUtil.copyTextToClipboard)
         WindowUtil.disableFrame(isoFrame)
         return isoFrame
 

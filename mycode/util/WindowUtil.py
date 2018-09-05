@@ -52,3 +52,9 @@ class WindowUtil:
         button['font'] = font.Font(family='Helvetica', size=14, weight='bold')
         button['bg'] = "yellow"
         button['fg'] = "red"
+
+    @staticmethod
+    def copyTextToClipboard(event):
+        field_value = event.widget.get("1.0", 'end-1c')  # get field value from event, but remove line return at end
+        event.widget.clipboard_clear()  # clear clipboard contents
+        event.widget.clipboard_append(field_value)  # append new value to clipbaord
