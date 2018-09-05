@@ -25,9 +25,9 @@ class RBtnSwitchFrameTest:
 
     def createRBtns(self):
         leftRadioBtn = Radiobutton(self.window, text="one", variable=self.selectNr, value=1, command=self.onClick)
-        leftRadioBtn.place(x=0,y=0)
+        leftRadioBtn.place(x=0, y=0)
         leftRadioBtn.select()
-        Radiobutton(self.window, text="two", variable=self.selectNr, value=2, command=self.onClick).place(x=250,y=0)
+        Radiobutton(self.window, text="two", variable=self.selectNr, value=2, command=self.onClick).place(x=250, y=0)
 
     def onClick(self):
         print(self.selectNr.get())

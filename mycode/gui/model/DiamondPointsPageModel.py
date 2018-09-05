@@ -17,4 +17,4 @@ class DiamondPointsPageModel:
         self.xResult = Add
         self.yResult = Add
 
-        self.iso = "iso"+"\n"+"iso"
+        self.iso = ""

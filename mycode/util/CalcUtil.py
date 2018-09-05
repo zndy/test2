@@ -6,16 +6,16 @@ from sympy import *
 class CalcUtil:
 
     @staticmethod
-    def calcDistanceBetween(p1=MyPoint, p2=MyPoint):
+    def calcDistanceBetween(p1, p2):
         return sqrt(pow(p1.getX() - p2.getX(), 2) + pow(p1.getY() - p2.getY(), 2))
 
     @staticmethod
-    def calcLineFuncBy(p1=MyPoint, p2=MyPoint):
+    def calcLineFuncBy(p1, p2):
         x, y = symbols('x,y')
         return (y - p1.getY()) / (p2.getY() - p1.getY()) - (x - p1.getX()) / (p2.getX() - p1.getX())
 
     @staticmethod
-    def calcAbrichtPoint(near=MyPoint, far=MyPoint, distanceToNear=int):
+    def calcAbrichtPoint(near, far, distanceToNear):
         x, y = symbols('x,y')
         abrichtPoint = MyPoint(x, y)
         distanceBetweenNearFar = CalcUtil.calcDistanceBetween(near, far)

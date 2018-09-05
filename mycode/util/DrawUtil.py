@@ -6,11 +6,11 @@ from mycode.util.MatrixUtil import *
 
 class DrawUtil:
     @staticmethod
-    def drawCicle(x, y, r, canvas=Canvas):
+    def drawCicle(x, y, r, canvas):
         canvas.create_oval(x - r, y - r, x + r, y + r)
 
     @staticmethod
-    def drawAxis(x, y, r, color, angle, canvas=Canvas):
+    def drawAxis(x, y, r, color, angle, canvas):
         axisxP1 = MyPoint(x - r, y)
         axisxP2 = MyPoint(x + r, y)
         axisyP1 = MyPoint(x, y - r)

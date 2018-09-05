@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from tkinter import *
 from mycode.util.WindowUtil import *
 
 

@@ -13,10 +13,10 @@ class MainPage(Frame):
         self.rightArrowIcon = PhotoImage(file=IconPath.RIGHT_ARROW)
 
         self.diamondFrameSelectNr = IntVar()  # Nr 1: 3 values, Nr 2: 4 points
-        self.threeValuesCanvasFrame = Frame
-        self.threeValuesInputFrame = Frame
-        self.fourPointsCanvasFrame = Frame
-        self.fourPointsInputFrame = Frame
+        self.threeValuesCanvasFrame = None
+        self.threeValuesInputFrame = None
+        self.fourPointsCanvasFrame = None
+        self.fourPointsInputFrame = None
         self.convertBtn = Button
 
         # diamond scheibe three values
@@ -82,7 +82,7 @@ class MainPage(Frame):
 
         return diamondScheibeFrame
 
-    def __createThreeValuesFrame(self, master=Frame):
+    def __createThreeValuesFrame(self, master):
         threeValuesFrame = Frame(master)
         row = 0
         threeValuesRadioBtn = Radiobutton(threeValuesFrame, text="Three Values Version",
@@ -99,7 +99,7 @@ class MainPage(Frame):
         self.threeValuesInputFrame.grid(row=row, column=0, columnspan=2, sticky=W)
         return threeValuesFrame
 
-    def __createThreeValuesCanvasFrame(self, master=Frame):
+    def __createThreeValuesCanvasFrame(self, master):
         threeValuesCanvasFrame = Frame(master)
         canvas = Canvas(threeValuesCanvasFrame, width=200, height=200)
         canvas.grid(row=0, column=1, columnspan=1)
@@ -121,7 +121,7 @@ class MainPage(Frame):
         canvas.create_text(p0x + 8, p0y, fill="darkblue", text="ß")
         return threeValuesCanvasFrame
 
-    def __createThreeValuesInputFrame(self, master=Frame):
+    def __createThreeValuesInputFrame(self, master):
         threeValuesInputFrame = Frame(master)
         row = 0
         WindowUtil.createInputEntry(threeValuesInputFrame, "DiamondScheibe ß", row, self.diamond_beta)
@@ -131,7 +131,7 @@ class MainPage(Frame):
         WindowUtil.createInputEntry(threeValuesInputFrame, "DiamondScheibe d2", row, self.diamond_d2)
         return threeValuesInputFrame
 
-    def __createFourPointsFrame(self, master=Frame):
+    def __createFourPointsFrame(self, master):
         fourPointsFrame = Frame(master)
         row = 0
         fourPointsRadioBtn = Radiobutton(fourPointsFrame, text="Four Points Version",
@@ -147,7 +147,7 @@ class MainPage(Frame):
         self.fourPointsInputFrame.grid(row=row, column=0, columnspan=2)
         return fourPointsFrame
 
-    def __createFourPointsCanvasFrame(self, master=Frame):
+    def __createFourPointsCanvasFrame(self, master):
         fourPointsCanvasFrame = Frame(master)
         canvas = Canvas(fourPointsCanvasFrame, width=200, height=200)
         canvas.grid(row=0, column=1, columnspan=1)
@@ -174,7 +174,7 @@ class MainPage(Frame):
         DrawUtil.drawAxis(axisX, axisY, 51, "red", 270, canvas)
         return fourPointsCanvasFrame
 
-    def __createFourPointsInputFrame(self, master=Frame):
+    def __createFourPointsInputFrame(self, master):
         fourPointsInputFrame = Frame(master)
         row = 0
         WindowUtil.createPointInputEntry(fourPointsInputFrame, "DiamondScheibe P1", row, self.diamond_p1x,
@@ -206,7 +206,7 @@ class MainPage(Frame):
         self.__createAbrichtInputFrame(abrichtScheibeFrame)
         return abrichtScheibeFrame
 
-    def __createAbrichtCanvasFrame(self, master=Frame):
+    def __createAbrichtCanvasFrame(self, master):
         abrichtCanvasFrame = Frame(master)
         abrichtCanvasFrame.pack()
         canvas = Canvas(abrichtCanvasFrame, width=200, height=180)
@@ -229,7 +229,7 @@ class MainPage(Frame):
         axisY = p1y
         DrawUtil.drawAxis(axisX, axisY, 51, "red", 0, canvas)
 
-    def __createAbrichtInputFrame(self, master=Frame):
+    def __createAbrichtInputFrame(self, master):
         inputFrame = Frame(master)
         inputFrame.pack(side=BOTTOM)
         row = 0

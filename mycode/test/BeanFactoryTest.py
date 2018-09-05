@@ -3,7 +3,7 @@ from mycode.gui.BeanFactory import *
 
 
 def test1():
-    print(beanFactory.mainPageModel)
+    print(BeanFactory.getInstance().mainPageModel)
 
 
 def main():

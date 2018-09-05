@@ -6,7 +6,7 @@ from mycode.util.WindowUtil import *
 
 
 class DiamondPointsPageController:
-    def __init__(self,parent):
+    def __init__(self, parent):
         self.parent = parent
         self.diamondPointsPageModel = BeanFactory.getInstance().diamondPointsPageModel
         self.diamondPointsPage = DiamondPointsPage

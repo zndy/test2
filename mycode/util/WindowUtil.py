@@ -6,7 +6,7 @@ from tkinter import Label, Entry, font
 class WindowUtil:
 
     @staticmethod
-    def setWindowAttributes(title, w, h, window=Misc):
+    def setWindowAttributes(title, w, h, window):
         window.title(title)
 
         # get screen width and height
@@ -48,7 +48,7 @@ class WindowUtil:
         Entry(frame, textvariable=entry).grid(row=row, column=1, columnspan=1, sticky=E)
 
     @staticmethod
-    def setDefaultButtonStyle(button=Button):
+    def setDefaultButtonStyle(button):
         button['font'] = font.Font(family='Helvetica', size=14, weight='bold')
         button['bg'] = "yellow"
         button['fg'] = "red"

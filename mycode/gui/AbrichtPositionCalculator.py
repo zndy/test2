@@ -1,5 +1,4 @@
-from tarfile import calc_chksums
-
+#!/usr/bin/python3
 from mycode.util.MatrixUtil import *
 from mycode.gui.BeanFactory import *
 
