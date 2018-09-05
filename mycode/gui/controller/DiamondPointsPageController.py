@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from mycode.gui.BeanFactory import *
+from mycode.gui.icons.IconPath import IconPath
 from mycode.gui.view.DiamondPointsPage import *
 from mycode.util.WindowUtil import *
 
@@ -12,6 +13,7 @@ class DiamondPointsPageController:
 
     def openDiamondPage(self):
         window = Toplevel(self.parent)
+        window.iconbitmap(IconPath.APPLICATION_ICON)
         WindowUtil.setWindowAttributes("Diamond Points Page", 650, 800, window)
         self.diamondPointsPage = DiamondPointsPage(window)
         self.__updateView()

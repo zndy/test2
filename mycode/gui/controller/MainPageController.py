@@ -17,12 +17,12 @@ class MainPageController:
 
     def openMainPage(self):
         self.window = Tk()
+        self.window.iconbitmap(IconPath.APPLICATION_ICON)
         WindowUtil.setWindowAttributes("Abrichten Page", 900, 700, self.window)
         self.mainPage = MainPage(self.window)
         self.refreshViewFromModel()
         self.mainPage.addCalcBtnActionListener(self.calcBtnPressed)
         self.mainPage.addConvertBtnActionListener(self.convertBtnPressed)
-        self.window.iconbitmap(IconPath.APPLICATION_ICON)
         self.window.mainloop()
 
     def calcBtnPressed(self, event):
