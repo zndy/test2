@@ -11,6 +11,9 @@ class MyPoint:
     def __str__(self):
         return "MyPoint(" + str(self.__x) + ", " + str(self.__y) + ")"
 
+    def __eq__(self, o: object) -> bool:
+        return self.__class__ == o.__class__ and self.__x == o.__x and self.__y == o.__y
+
     def setXY(self, x, y):
         self.__x = x
         self.__y = y

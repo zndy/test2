@@ -1,20 +1,24 @@
 import unittest
 
 
-class MyTest(unittest.TestCase):  # 继承unittest.TestCase
+class MyTest(unittest.TestCase):
     def setUp(self):
-        print('setUp: before every test\n')
+        # print('setUp: before every test\n')
+        pass
 
     def tearDown(self):
-        print('tearDown: after every test\n')
+        # print('tearDown: after every test\n')
+        pass
 
     @classmethod
     def setUpClass(self):
-        print('setUpClass: before all test\n')
+        # print('setUpClass: before all test\n')
+        pass
 
     @classmethod
     def tearDownClass(self):
-        print('tearDownClass: after all test\n')
+        # print('tearDownClass: after all test\n')
+        pass
 
     def test_a_run(self):
         self.assertEqual(1, 1)
