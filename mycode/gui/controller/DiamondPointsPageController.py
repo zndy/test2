@@ -3,15 +3,18 @@ from mycode.gui.BeanFactory import *
 from mycode.gui.icons.IconPath import IconPath
 from mycode.gui.view.DiamondPointsPage import *
 from mycode.util.WindowUtil import *
+import logging
 
 
 class DiamondPointsPageController:
     def __init__(self, parent):
+        self.logger = logging.getLogger()
         self.parent = parent
         self.diamondPointsPageModel = BeanFactory.getInstance().diamondPointsPageModel
         self.diamondPointsPage = DiamondPointsPage
 
     def openDiamondPage(self):
+        self.logger.info("open DiamondPage")
         window = Toplevel(self.parent)
         window.iconbitmap(IconPath.APPLICATION_ICON)
         WindowUtil.setWindowAttributes("Diamond Points Page", 650, 800, window)

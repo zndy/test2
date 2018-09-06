@@ -5,17 +5,20 @@ from mycode.gui.controller.DiamondPointsPageController import *
 from mycode.util.WindowUtil import *
 from mycode.gui.AbrichtPositionCalculator import *
 from mycode.gui.icons.IconPath import *
+import logging
 
 
 class MainPageController:
 
     def __init__(self):
+        self.logger = logging.getLogger()
         self.window = Tk
         self.mainPageModel = BeanFactory.getInstance().mainPageModel
         self.diamondPointsPageModel = BeanFactory.getInstance().diamondPointsPageModel
         self.mainPage = MainPage
 
     def openMainPage(self):
+        self.logger.info("open MainPage")
         self.window = Tk()
         self.window.iconbitmap(IconPath.APPLICATION_ICON)
         WindowUtil.setWindowAttributes("Abrichten Page", 900, 700, self.window)

@@ -19,7 +19,7 @@ def setup_logging(configPath, storeDir, default_level=logging.INFO, env_key="LOG
 
 
 def func():
-    logger = logging.getLogger("my_module")
+    logger = logging.getLogger()
     logger.debug("start func")
     logger.info("exec func")
     logger.error("end func")
