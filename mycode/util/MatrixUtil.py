@@ -12,9 +12,9 @@ class MatrixUtil:
 
     @staticmethod
     def translationMatrix2D(dx, dy):
-        rotationMatrix = Matrix(
+        translationMatrix = Matrix(
             [[1, 0, dx], [0, 1, dy], [0, 0, 1]])
-        return rotationMatrix
+        return translationMatrix
 
     # ---------------------------------test-------------------------------------
     @staticmethod
