@@ -14,6 +14,7 @@ class Application:
         logger.info("Calculator start")
         MainPageController().openMainPage()
 
+
 def setup_logging(configPath, storeDir, default_level=logging.INFO, env_key="LOG_CFG"):
     if not os.path.exists(storeDir):
         os.mkdir(storeDir)
@@ -28,8 +29,9 @@ def setup_logging(configPath, storeDir, default_level=logging.INFO, env_key="LOG
     else:
         logging.basicConfig(level=default_level)
 
+
 def main():
-    setup_logging("mycode/logging.yaml","logs")
+    setup_logging("mycode/logging.yaml", "logs")
     Application().start()
 
 
