@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb94fb4a-b00f-479d-943c-7407081381c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/test2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycode/gui/BeanFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycode/gui/BeanFactory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycode/gui/controller/DiamondPointsPageController.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycode/gui/controller/DiamondPointsPageController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycode/gui/controller/MainPageController.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycode/gui/controller/MainPageController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycode/test/BeanFactoryTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycode/test/BeanFactoryTest.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,23 +17,73 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mycode/entity/MyPoint.py">
+        <entry file="file://$PROJECT_DIR$/Application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+            <state relative-caret-position="232">
+              <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding>
-                <marker date="1536136206317" expanded="true" signature="360:364" ph="..." />
-                <marker date="1536136206317" expanded="true" signature="386:434" ph="..." />
+                <element signature="e#19#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mycode/gui/icons/IconPath.py">
+        <entry file="file://$PROJECT_DIR$/mycode/gui/controller/MainPageController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="252">
+              <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
+              <folding>
+                <element signature="e#19#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mycode/gui/BeanFactory.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mycode/test/BeanFactoryTest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mycode/gui/model/DiamondPointsPageModel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mycode/gui/controller/DiamondPointsPageController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="12" column="77" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
+              <folding>
+                <element signature="e#19#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mycode/gui/view/DiamondPointsPage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1496">
+              <caret line="68" column="98" selection-start-line="68" selection-start-column="87" selection-end-line="68" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -58,6 +110,10 @@
       <find>self</find>
       <find>calculator</find>
       <find>xResult</find>
+      <find>logger</find>
+      <find>beanFactory</find>
+      <find>print</find>
+      <find>diamondPointsPageModel</find>
     </findStrings>
     <replaceStrings>
       <replace>self.padding</replace>
@@ -87,15 +143,12 @@
         <option value="$PROJECT_DIR$/../../beispiel/PointTest.py" />
         <option value="$PROJECT_DIR$/mycode/util/AbrichtenMatrixUtil.py" />
         <option value="$PROJECT_DIR$/mycode/test/GridLayoutTest.py" />
-        <option value="$PROJECT_DIR$/mycode/gui/model/MainPageModel.py" />
         <option value="$PROJECT_DIR$/mycode/gui/icons/IconPathTest.py" />
-        <option value="$PROJECT_DIR$/mycode/gui/BeanFactory.py" />
         <option value="$PROJECT_DIR$/mycode/util/IsoGenerator.py" />
         <option value="$PROJECT_DIR$/mycode/gui/IsoGenerator.py" />
         <option value="$PROJECT_DIR$/mycode/gui/model/DiamondPointsPageModel.py" />
         <option value="$PROJECT_DIR$/mycode/gui/view/MainPage.py" />
         <option value="$PROJECT_DIR$/mycode/gui/AbrichtPositionCalculator.py" />
-        <option value="$PROJECT_DIR$/mycode/test/BeanFactoryTest.py" />
         <option value="$PROJECT_DIR$/mycode/test/RBtnSwitchFrameTest.py" />
         <option value="$PROJECT_DIR$/mycode/util/CalcUtil.py" />
         <option value="$PROJECT_DIR$/mycode/util/DrawUtil.py" />
@@ -113,11 +166,14 @@
         <option value="$PROJECT_DIR$/mycode/test/test_fileexist.py" />
         <option value="$PROJECT_DIR$/mycode/test/LoggintTest.py" />
         <option value="$PROJECT_DIR$/mycode/logging.yaml" />
-        <option value="$PROJECT_DIR$/mycode/gui/controller/MainPageController.py" />
-        <option value="$PROJECT_DIR$/mycode/gui/controller/DiamondPointsPageController.py" />
         <option value="$PROJECT_DIR$/mycode/util/MatrixUtil.py" />
         <option value="$PROJECT_DIR$/Application.py" />
         <option value="$PROJECT_DIR$/mycode/gui/icons/IconPath.py" />
+        <option value="$PROJECT_DIR$/mycode/gui/model/MainPageModel.py" />
+        <option value="$PROJECT_DIR$/mycode/gui/BeanFactory.py" />
+        <option value="$PROJECT_DIR$/mycode/test/BeanFactoryTest.py" />
+        <option value="$PROJECT_DIR$/mycode/gui/controller/DiamondPointsPageController.py" />
+        <option value="$PROJECT_DIR$/mycode/gui/controller/MainPageController.py" />
       </list>
     </option>
   </component>
@@ -143,6 +199,24 @@
               <item name="test2" type="b2602c69:ProjectViewProjectNode" />
               <item name="test2" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="test2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test2" type="462c0819:PsiDirectoryNode" />
+              <item name="mycode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test2" type="462c0819:PsiDirectoryNode" />
+              <item name="mycode" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test2" type="462c0819:PsiDirectoryNode" />
+              <item name="mycode" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -154,16 +228,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Dropbox\programmierung\python\project\test2\mycode" />
-      <recent name="C:\Dropbox\programmierung\python\project\test2\mycode\gui\icons" />
-      <recent name="C:\Dropbox\programmierung\python\project\test2\mycode\gui\view" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Dropbox\programmierung\python\project\test2\mycode\test" />
       <recent name="C:\Dropbox\programmierung\python\project\test2\mycode\gui" />
       <recent name="C:\Dropbox\programmierung\python\project\test2\mycode\gui\icons" />
       <recent name="C:\Dropbox\programmierung\python\project\test2" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dropbox\programmierung\python\project\test2" />
+      <recent name="C:\Dropbox\programmierung\python\project\test2\mycode" />
+      <recent name="C:\Dropbox\programmierung\python\project\test2\mycode\gui\icons" />
+      <recent name="C:\Dropbox\programmierung\python\project\test2\mycode\gui\view" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -178,7 +253,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.UnitTestRunner">
+  <component name="RunManager" selected="Python.Application">
     <configuration name="Application" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -192,6 +267,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Application.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BeanFactoryTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mycode/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mycode/test/BeanFactoryTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -263,34 +359,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_fileexist.FileExistTest.test_other" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="test2" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mycode/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_fileexist.FileExistTest.test_other&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.LoggintTest" />
       <item itemvalue="Python.Application" />
       <item itemvalue="Python.MatrixUtil" />
-      <item itemvalue="Python tests.Unittests for test_fileexist.FileExistTest.test_other" />
       <item itemvalue="Python.UnitTestRunner" />
+      <item itemvalue="Python.BeanFactoryTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.UnitTestRunner" />
         <item itemvalue="Python.Application" />
+        <item itemvalue="Python.BeanFactoryTest" />
+        <item itemvalue="Python.UnitTestRunner" />
         <item itemvalue="Python.MatrixUtil" />
         <item itemvalue="Python.LoggintTest" />
-        <item itemvalue="Python tests.Unittests for test_fileexist.FileExistTest.test_other" />
       </list>
     </recent_temporary>
   </component>
@@ -696,18 +778,18 @@
     <frame x="2552" y="-8" width="1936" height="1216" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23867229" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23867229" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.23154981" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49901226" visible="true" weight="0.25738007" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.23154981" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49901226" weight="0.25738007" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3996828" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49980244" weight="0.3298969" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298969" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49940735" weight="0.23869945" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49940735" weight="0.23800738" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50059265" side_tool="true" weight="0.23869945" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.3298969" />
@@ -769,24 +851,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="logging structure finished" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../beispiel/MatrixUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../test1/MatrixUtil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1019">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sympy/geometry/line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-358">
-          <caret line="147" column="18" lean-forward="true" selection-start-line="147" selection-start-column="18" selection-end-line="147" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -840,13 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/gui/view/MainPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2184">
-          <caret line="133" column="44" selection-start-line="133" selection-start-column="44" selection-end-line="133" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mycode/gui/view/MainPage1.py" />
     <entry file="file://$PROJECT_DIR$/mycode/gui/IsoGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -859,20 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/util/DrawUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="52" column="109" lean-forward="true" selection-start-line="52" selection-start-column="109" selection-end-line="52" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/util/WindowUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="46" column="85" selection-start-line="46" selection-start-column="85" selection-end-line="46" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -892,20 +939,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mycode/info.log" />
     <entry file="file://$PROJECT_DIR$/mycode/errors.log" />
-    <entry file="file://$PROJECT_DIR$/mycode/test/test_example2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/test/test_mypoint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mycode/LoggintTest.py" />
     <entry file="file://$PROJECT_DIR$/mycode/test/test_fileexist.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -919,13 +952,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mycode/test/logs/info.log">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/test/BeanFactoryTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/info.log">
       <provider selected="true" editor-type-id="text-editor">
@@ -944,13 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/test/LoggintTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sympy/core/add.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1298">
@@ -958,73 +977,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/util/CalcUtil.py">
+    <entry file="file://$PROJECT_DIR$/mycode/gui/icons/IconPath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="23" column="97" lean-forward="true" selection-start-line="23" selection-start-column="97" selection-end-line="23" selection-end-column="97" />
+        <state relative-caret-position="352">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/util/MatrixUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="95" column="39" lean-forward="true" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
-          <folding>
-            <marker date="1546934268328" expanded="true" signature="469:574" ph="..." />
-            <marker date="1546934268328" expanded="true" signature="4467:4472" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/gui/AbrichtPositionCalculator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/gui/view/DiamondPointsPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="81" column="19" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/gui/BeanFactory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-          <folding>
-            <element signature="e#19#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/gui/model/MainPageModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1165">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/gui/controller/DiamondPointsPageController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mycode/logging.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="54" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+        <state relative-caret-position="396">
+          <caret line="18" column="27" lean-forward="true" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/util/WindowUtil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="46" column="85" selection-start-line="46" selection-start-column="85" selection-end-line="46" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sympy/geometry/line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/test/test_mypoint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="24" />
+          <folding>
+            <element signature="e#19#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/test/LoggintTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1035,27 +1032,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/gui/model/DiamondPointsPageModel.py">
+    <entry file="file://$PROJECT_DIR$/mycode/test/test_example2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/gui/controller/MainPageController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="125" column="59" selection-start-line="125" selection-start-column="59" selection-end-line="125" selection-end-column="59" />
-          <folding>
-            <element signature="e#19#56#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="66">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mycode/entity/MyPoint.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        <state relative-caret-position="540">
+          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
           <folding>
             <marker date="1536136206317" expanded="true" signature="360:364" ph="..." />
             <marker date="1536136206317" expanded="true" signature="386:434" ph="..." />
@@ -1063,10 +1050,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mycode/gui/icons/IconPath.py">
+    <entry file="file://$PROJECT_DIR$/mycode/gui/AbrichtPositionCalculator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-773">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <element signature="e#19#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/util/MatrixUtil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <marker date="1546934268328" expanded="true" signature="469:574" ph="..." />
+            <marker date="1546934268328" expanded="true" signature="4467:4472" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/util/CalcUtil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/gui/model/MainPageModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/util/DrawUtil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/gui/view/MainPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3246">
+          <caret line="222" column="38" lean-forward="true" selection-start-line="222" selection-start-column="38" selection-end-line="222" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding>
+            <element signature="e#19#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/gui/view/DiamondPointsPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="68" column="98" selection-start-line="68" selection-start-column="87" selection-end-line="68" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/gui/model/DiamondPointsPageModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/test/BeanFactoryTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/gui/BeanFactory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/gui/controller/DiamondPointsPageController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="12" column="77" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
+          <folding>
+            <element signature="e#19#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycode/gui/controller/MainPageController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
+          <folding>
+            <element signature="e#19#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

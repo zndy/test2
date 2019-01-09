@@ -15,3 +15,11 @@ class BeanFactory:
         if cls.__instance is None:
             cls.__instance = BeanFactory()
         return cls.__instance
+
+    @classmethod
+    def getMainPageModel(cls):
+        return cls.getInstance().mainPageModel
+
+    @classmethod
+    def getDiamondPointsPageModel(cls):
+        return cls.getInstance().diamondPointsPageModel

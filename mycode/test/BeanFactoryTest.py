@@ -3,7 +3,10 @@ from mycode.gui.BeanFactory import *
 
 
 def test1():
-    print(BeanFactory.getInstance().mainPageModel)
+    print(BeanFactory.getDiamondPointsPageModel())
+    print(BeanFactory.getDiamondPointsPageModel())
+    print(BeanFactory.getMainPageModel())
+    print(BeanFactory.getMainPageModel())
 
 
 def main():

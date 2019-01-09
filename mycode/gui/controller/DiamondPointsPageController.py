@@ -10,7 +10,7 @@ class DiamondPointsPageController:
     def __init__(self, parent):
         self.logger = logging.getLogger()
         self.parent = parent
-        self.diamondPointsPageModel = BeanFactory.getInstance().diamondPointsPageModel
+        self.diamondPointsPageModel = BeanFactory.getDiamondPointsPageModel()
         self.diamondPointsPage = DiamondPointsPage
 
     def openDiamondPage(self):

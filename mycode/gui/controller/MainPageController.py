@@ -13,8 +13,8 @@ class MainPageController:
     def __init__(self):
         self.logger = logging.getLogger()
         self.window = Tk
-        self.mainPageModel = BeanFactory.getInstance().mainPageModel
-        self.diamondPointsPageModel = BeanFactory.getInstance().diamondPointsPageModel
+        self.mainPageModel = BeanFactory.getMainPageModel()
+        self.diamondPointsPageModel = BeanFactory.getDiamondPointsPageModel()
         self.mainPage = MainPage
 
     def openMainPage(self):
